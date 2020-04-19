@@ -5,7 +5,9 @@ using UnityEngine;
 public class GyroscopeControl : MonoBehaviour
 {
     // STATE
+    private float _initialXAngle = 0f;
     private float _initialYAngle = 0f;
+    private float _initialZAngle = 0f;
     private float _appliedGyroYAngle = 0f;
     private float _calibrationYAngle = 0f;
     private Transform _rawGyroRotation;
@@ -49,7 +51,11 @@ public class GyroscopeControl : MonoBehaviour
 
     private void ApplyGyroRotation()
     {
-        Quaternion tempGyroRotation = new Quaternion(Input.gyro.attitude.x, 0f, Input.gyro.attitude.y, Input.gyro.attitude.w);
+        Quaternion tempGyroRotation = new Quaternion(
+            -Input.gyro.attitude.x, 
+            0f, 
+            -Input.gyro.attitude.y, 
+            Input.gyro.attitude.w);
         _rawGyroRotation.rotation = tempGyroRotation;
     }
 
