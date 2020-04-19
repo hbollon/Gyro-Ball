@@ -49,10 +49,8 @@ public class GyroscopeControl : MonoBehaviour
 
     private void ApplyGyroRotation()
     {
-        _rawGyroRotation.rotation = Input.gyro.attitude;
-        _rawGyroRotation.Rotate(0f, 0f, 180f, Space.Self); // Swap "handedness" of quaternion from gyro.
-        _rawGyroRotation.Rotate(90f, 180f, 0f, Space.World); // Rotate to make sense as a camera pointing out the back of your device.
-        _appliedGyroYAngle = _rawGyroRotation.eulerAngles.y; // Save the angle around y axis for use in calibration.
+        Quaternion tempGyroRotation = new Quaternion(Input.gyro.attitude.x, 0f, Input.gyro.attitude.y, Input.gyro.attitude.w);
+        _rawGyroRotation.rotation = tempGyroRotation;
     }
 
     private void ApplyCalibration()
