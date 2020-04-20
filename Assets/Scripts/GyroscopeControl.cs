@@ -48,7 +48,7 @@ public class GyroscopeControl : MonoBehaviour
             -Input.gyro.attitude.x * curSpeed, 
             0.0f, 
             -Input.gyro.attitude.y * curSpeed, 
-            Input.gyro.attitude.w);
+            Input.gyro.attitude.w * curSpeed);
         rawGyroRotation.rotation = tempGyroRotation;
     }
 
