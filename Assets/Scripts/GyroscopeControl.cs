@@ -5,13 +5,14 @@ using UnityEngine;
 public class GyroscopeControl : MonoBehaviour
 {
     // STATE
-    private Transform _rawGyroRotation;
+    private Transform rawGyroRotation;
 
     Quaternion initialRotation; 
     Quaternion gyroInitialRotation;
 
     // SETTINGS
-    [SerializeField] private float _smoothing = 0.1f;
+    [SerializeField] private float smoothing = 0.1f;
+    [SerializeField] private float speed = 60.0f;
 
     private void Awake() {
         Input.gyro.enabled = true;
@@ -27,37 +28,35 @@ public class GyroscopeControl : MonoBehaviour
         gyroInitialRotation.z = -Input.gyro.attitude.y; // We rotate object on Y with Z axis gyro
         gyroInitialRotation.w = Input.gyro.attitude.w;
 
-        _rawGyroRotation = new GameObject("GyroRaw").transform;
-        _rawGyroRotation.position = transform.position;
-        _rawGyroRotation.rotation = transform.rotation;
+        rawGyroRotation = new GameObject("GyroRaw").transform;
+        rawGyroRotation.position = transform.position;
+        rawGyroRotation.rotation = transform.rotation;
     }
 
     private void Update()
     {
         ApplyGyroRotation();
-        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * _rawGyroRotation.rotation;
+        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * rawGyroRotation.rotation;
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, _smoothing);
+        transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, smoothing);
     }
-
-    /* private IEnumerator CalibrateAngles()
-    {
-        _tempSmoothing = _smoothing;
-        _smoothing = 1;
-        _calibrationXAngle = _appliedGyroXAngle - _initialAngles.x; // Offsets the y angle in case it wasn't 0 at edit time.
-        _calibrationYAngle = _appliedGyroYAngle - _initialAngles.y; // Offsets the y angle in case it wasn't 0 at edit time.
-        _calibrationZAngle = _appliedGyroZAngle - _initialAngles.z; // Offsets the y angle in case it wasn't 0 at edit time.
-        yield return null;
-        _smoothing = _tempSmoothing;
-    } */
 
     private void ApplyGyroRotation()
     {
+        float curSpeed = Time.deltaTime * speed;
         Quaternion tempGyroRotation = new Quaternion(
-            -Input.gyro.attitude.x, 
+            -Input.gyro.attitude.x * curSpeed, 
             0.0f, 
-            -Input.gyro.attitude.y, 
+            -Input.gyro.attitude.y * curSpeed, 
             Input.gyro.attitude.w);
-        _rawGyroRotation.rotation = tempGyroRotation;
+        rawGyroRotation.rotation = tempGyroRotation;
     }
+
+    public void setSpeed(float speed){
+        this.speed = speed;
+    }
+
+    public float getSpeed(){
+        return speed;
+    } 
 }
