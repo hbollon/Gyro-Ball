@@ -22,12 +22,14 @@ public class GyroscopeControl : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         
+        /* Get object and gyroscope initial rotation */
         initialRotation = transform.rotation; 
         gyroInitialRotation.x = -Input.gyro.attitude.x;
         gyroInitialRotation.y = 0.0f; // Fixed Y axis
         gyroInitialRotation.z = -Input.gyro.attitude.y; // We rotate object on Y with Z axis gyro
         gyroInitialRotation.w = Input.gyro.attitude.w;
 
+        /* GameObject instance used to prepare object movement */
         rawGyroRotation = new GameObject("GyroRaw").transform;
         rawGyroRotation.position = transform.position;
         rawGyroRotation.rotation = transform.rotation;
@@ -35,10 +37,10 @@ public class GyroscopeControl : MonoBehaviour
 
     private void Update()
     {
-        ApplyGyroRotation();
-        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * rawGyroRotation.rotation;
+        ApplyGyroRotation(); // Get rotation state in rawGyroRotation
+        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * rawGyroRotation.rotation; // Apply initial offset for calibration
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, smoothing);
+        transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, smoothing); // Progressive rotation of the object
     }
 
     private void ApplyGyroRotation()
