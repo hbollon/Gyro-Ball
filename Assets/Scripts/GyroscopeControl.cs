@@ -6,7 +6,6 @@ public class GyroscopeControl : MonoBehaviour
 {
     // STATE
     private Transform rawGyroRotation;
-
     Quaternion initialRotation; 
     Quaternion gyroInitialRotation;
 
@@ -61,4 +60,12 @@ public class GyroscopeControl : MonoBehaviour
     public float getSpeed(){
         return speed;
     } 
+
+    public void recalibrate(){
+        gyroInitialRotation.x = -Input.gyro.attitude.x;
+        gyroInitialRotation.y = 0.0f;
+        gyroInitialRotation.z = -Input.gyro.attitude.y;
+        gyroInitialRotation.w = Input.gyro.attitude.w;
+        print("Successfully recalibrated !");
+    }
 }
