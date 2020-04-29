@@ -93,7 +93,7 @@ QualitySettings:
     skinWeights: 2
     textureQuality: 0
     anisotropicTextures: 1
-    antiAliasing: 0
+    antiAliasing: 2
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -155,9 +155,9 @@ QualitySettings:
     pixelLightCount: 3
     shadows: 2
     shadowResolution: 2
-    shadowProjection: 0
-    shadowCascades: 4
-    shadowDistance: 20
+    shadowProjection: 1
+    shadowCascades: 2
+    shadowDistance: 70
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -191,14 +191,14 @@ QualitySettings:
     pixelLightCount: 4
     shadows: 2
     shadowResolution: 2
-    shadowProjection: 0
+    shadowProjection: 1
     shadowCascades: 4
-    shadowDistance: 20
+    shadowDistance: 150
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
-    skinWeights: 4
+    skinWeights: 255
     textureQuality: 0
     anisotropicTextures: 2
     antiAliasing: 2
@@ -225,10 +225,8 @@ QualitySettings:
   m_PerPlatformDefaultQuality:
     Android: 2
     Lumin: 5
-    Nintendo 3DS: 5
     Nintendo Switch: 5
     PS4: 5
-    PSP2: 2
     Stadia: 5
     Standalone: 5
     WebGL: 3
