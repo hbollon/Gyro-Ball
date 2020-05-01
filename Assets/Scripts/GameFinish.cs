@@ -11,22 +11,13 @@ public class GameFinish : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if((other.gameObject.tag == "Ball") && (!other.gameObject.GetComponent<Ball>().isAtEnd()) && (!other.gameObject.GetComponent<Ball>().isAttached())){
-            other.gameObject.GetComponent<Ball>().setAtEnd(true);
-
-            print("Creating joint...");
-            FixedJoint joint = gameObject.AddComponent<FixedJoint>(); 
-            // sets joint position to point of contact
-            joint.anchor = other.contacts[0].point; 
-            // conects the joint to the other object
-            joint.connectedBody = other.contacts[0].otherCollider.transform.GetComponentInParent<Rigidbody>(); 
-            // Stops objects from continuing to collide and creating more joints
-            joint.enableCollision = false; 
-            print("Creating joint done !");
-            
+        if((other.gameObject.tag == "Ball") && (!other.gameObject.GetComponent<Ball>().IsAtEnd()) && (!other.gameObject.GetComponent<Ball>().IsAttached())){
+            other.gameObject.GetComponent<Ball>().SetAtEnd(true);
+            other.gameObject.transform.parent = gameObject.transform;
+            other.gameObject.GetComponent<Ball>().SetAttached(true);
             nbBallsAtEnd++;
-            other.gameObject.GetComponent<Ball>().setAttached(true);
-            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+
+            other.gameObject.GetComponent<Ball>().Finish();
         }
     }
 }

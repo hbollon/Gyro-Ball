@@ -12,6 +12,6 @@ public class CalibrateButton : MonoBehaviour, IPointerDownHandler {
     public void OnPointerDown(PointerEventData ped)
     {
         print("Recalibrating...");
-        gcScript.recalibrate();
+        gcScript.Recalibrate();
     }  
 }

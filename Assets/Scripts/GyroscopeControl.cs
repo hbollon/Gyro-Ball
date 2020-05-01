@@ -53,15 +53,15 @@ public class GyroscopeControl : MonoBehaviour
         rawGyroRotation.rotation = tempGyroRotation;
     }
 
-    public void setSpeed(float speed){
+    public void SetSpeed(float speed){
         this.speed = speed;
     }
 
-    public float getSpeed(){
+    public float GetSpeed(){
         return speed;
     } 
 
-    public void recalibrate(){
+    public void Recalibrate(){
         gyroInitialRotation.x = -Input.gyro.attitude.x;
         gyroInitialRotation.y = 0.0f;
         gyroInitialRotation.z = -Input.gyro.attitude.y;
