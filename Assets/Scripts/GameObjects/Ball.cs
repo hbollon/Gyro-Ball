@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour {
     private Rigidbody m_Rigidbody;
     private bool atEnd;
     private bool attached;
-    private float speedEndSeconds = 0.6f;
+    private float speedEndSeconds = 1.0f;
 
     private void Start() {
         // Disable sleep for Rigidbody
@@ -21,9 +21,9 @@ public class Ball : MonoBehaviour {
     }
 
     public void Finish() {
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
+        GetComponent<Rigidbody>().isKinematic = true;
             
         Vector3 endPosition = Vector3.zero;
         endPosition.y += 0.3f;
@@ -34,18 +34,48 @@ public class Ball : MonoBehaviour {
     {
         float currentTime = 0.0f;
         float normalizedDelta;
-        Vector3 srcPosition = gameObject.transform.localPosition;
+        Vector3 srcPosition = transform.localPosition;
+        Quaternion srcRotation = transform.rotation;
         while (currentTime < speedEndSeconds)
         {
             currentTime += Time.deltaTime;
             normalizedDelta = currentTime / speedEndSeconds;
-            print("NormalizedDelta : "+normalizedDelta);
-            gameObject.transform.localPosition = Vector3.Lerp(srcPosition, destPosition, normalizedDelta);
+            print("NormalizedDelta : " + normalizedDelta);
+            transform.localPosition = Vector3.Lerp(srcPosition, destPosition, normalizedDelta);
+            transform.rotation = Quaternion.Lerp(srcRotation, Quaternion.identity, normalizedDelta);
             
             yield return null;
         }
-        gameObject.transform.localPosition = destPosition;
+        transform.localPosition = destPosition;
+        StartCoroutine(StartEndAnim());
         yield return null;
+    }
+
+    private IEnumerator StartEndAnim() {
+        Vector3 initialPosition = transform.localPosition;
+        float animHeight = 0.05f;
+        float speed = 0.002f;
+        int upDown = 1;
+        for(;;){
+            if(upDown == 1){
+                transform.localPosition = new Vector3(transform.localPosition.x,
+                                                transform.localPosition.y + speed, 
+                                                transform.localPosition.z);
+                transform.Rotate(0,60 * Time.deltaTime,0);
+                if(transform.localPosition.y >= (initialPosition.y + animHeight))
+                    upDown = 0;
+            }
+            else{
+                transform.localPosition = new Vector3(transform.localPosition.x,
+                                                transform.localPosition.y - speed, 
+                                                transform.localPosition.z);
+                transform.Rotate(0,60 * Time.deltaTime, 0);
+                if(transform.localPosition.y <= (initialPosition.y - animHeight))
+                    upDown = 1;
+            }
+
+            yield return null;
+        }
     }
 
     public void SetAtEnd(bool atEnd){
