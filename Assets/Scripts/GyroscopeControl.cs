@@ -6,23 +6,24 @@ public class GyroscopeControl : MonoBehaviour
 {
     // STATE
     private Transform rawGyroRotation;
-    Quaternion initialRotation; 
+    Quaternion initialRotation;
     Quaternion gyroInitialRotation;
 
     // SETTINGS
     [SerializeField] private float smoothing = 0.1f;
     [SerializeField] private float speed = 60.0f;
 
-    private void Awake() {
+    private void Awake()
+    {
         Input.gyro.enabled = true;
     }
 
     private void Start()
     {
         Application.targetFrameRate = 60;
-        
+
         /* Get object and gyroscope initial rotation */
-        initialRotation = transform.rotation; 
+        initialRotation = transform.rotation;
         gyroInitialRotation.x = -Input.gyro.attitude.x;
         gyroInitialRotation.y = 0.0f; // Fixed Y axis
         gyroInitialRotation.z = -Input.gyro.attitude.y; // We rotate object on Y with Z axis gyro
@@ -36,32 +37,38 @@ public class GyroscopeControl : MonoBehaviour
 
     private void Update()
     {
-        ApplyGyroRotation(); // Get rotation state in rawGyroRotation
-        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * rawGyroRotation.rotation; // Apply initial offset for calibration
+        if (Time.timeScale == 1)
+        {
+            ApplyGyroRotation(); // Get rotation state in rawGyroRotation
+            Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * rawGyroRotation.rotation; // Apply initial offset for calibration
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, smoothing); // Progressive rotation of the object
+            transform.rotation = Quaternion.Slerp(transform.rotation, initialRotation * offsetRotation, smoothing); // Progressive rotation of the object
+        }
     }
 
     private void ApplyGyroRotation()
     {
         float curSpeed = Time.deltaTime * speed;
         Quaternion tempGyroRotation = new Quaternion(
-            -Input.gyro.attitude.x * curSpeed, 
-            0.0f, 
-            -Input.gyro.attitude.y * curSpeed, 
+            -Input.gyro.attitude.x * curSpeed,
+            0.0f,
+            -Input.gyro.attitude.y * curSpeed,
             Input.gyro.attitude.w * curSpeed);
         rawGyroRotation.rotation = tempGyroRotation;
     }
 
-    public void SetSpeed(float speed){
+    public void SetSpeed(float speed)
+    {
         this.speed = speed;
     }
 
-    public float GetSpeed(){
+    public float GetSpeed()
+    {
         return speed;
-    } 
+    }
 
-    public void Recalibrate(){
+    public void Recalibrate()
+    {
         gyroInitialRotation.x = -Input.gyro.attitude.x;
         gyroInitialRotation.y = 0.0f;
         gyroInitialRotation.z = -Input.gyro.attitude.y;
