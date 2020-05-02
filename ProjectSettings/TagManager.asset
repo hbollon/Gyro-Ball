@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Board
+  - Ball
+  - InGameUI
+  - OnPauseUI
+  - OnGameOverUI
+  - OnFinishUI
+  - GUI
   layers:
   - Default
   - TransparentFX
