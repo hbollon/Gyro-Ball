@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Board
   - Ball
+  - InGameUI
+  - OnPauseUI
+  - OnGameOverUI
+  - OnFinishUI
+  - GUI
   layers:
   - Default
   - TransparentFX
