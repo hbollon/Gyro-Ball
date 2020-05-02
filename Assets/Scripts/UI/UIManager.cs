@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject gui;
-
     private GameObject[] pauseObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -20,7 +19,7 @@ public class UIManager : MonoBehaviour
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
-        finishObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
+        gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
 
         HidePaused();
@@ -28,8 +27,8 @@ public class UIManager : MonoBehaviour
         HideFinished();
         ShowInGame();
 
-        if (GameObject.FindWithTag("Player"))
-            ballsController = GameObject.FindGameObjectsWithTag("Player");
+        if (GameObject.FindWithTag("Ball"))
+            ballsController = GameObject.FindGameObjectsWithTag("Ball");
     }
 
     // Update
@@ -132,7 +131,7 @@ public class UIManager : MonoBehaviour
     //shows objects with OnGameOverUI tag
     public void ShowGameOver()
     {
-        foreach (GameObject g in finishObjects)
+        foreach (GameObject g in gameOverObjects)
         {
             g.SetActive(true);
         }
@@ -141,7 +140,7 @@ public class UIManager : MonoBehaviour
     //hides objects with OnGameOverUI tag
     public void HideGameOver()
     {
-        foreach (GameObject g in finishObjects)
+        foreach (GameObject g in gameOverObjects)
         {
             g.SetActive(false);
         }

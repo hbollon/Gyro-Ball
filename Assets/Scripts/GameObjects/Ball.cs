@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour {
 
     private Rigidbody m_Rigidbody;
     private bool atEnd;
+    private bool falled;
     private bool attached;
     private float speedEndSeconds = 1.0f;
 
@@ -15,6 +16,7 @@ public class Ball : MonoBehaviour {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.sleepThreshold = 0.0f;
         atEnd = false;
+        falled = false;
         attached = false;
     }
 
@@ -82,7 +84,11 @@ public class Ball : MonoBehaviour {
     }
 
     private void GameOver(){
-        Time.timeScale = 0;
+        falled = true;
+    }
+
+    public bool GetFalled(){
+        return falled;
     }
 
     public void SetAtEnd(bool atEnd){
