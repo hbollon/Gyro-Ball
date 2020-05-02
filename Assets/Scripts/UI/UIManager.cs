@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject gui;
 
     private GameObject[] pauseObjects;
     private GameObject[] inGameObjects;
@@ -14,6 +15,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+
+        gui.SetActive(true);
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
