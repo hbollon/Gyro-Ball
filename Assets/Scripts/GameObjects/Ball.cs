@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour {
     private bool attached;
     private float speedEndSeconds = 1.0f;
 
+    public float minimalHeight = 0f;
+
     private void Start() {
         // Disable sleep for Rigidbody
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -17,7 +19,8 @@ public class Ball : MonoBehaviour {
     }
 
     private void Update() {
-        
+        if(transform.position.y < minimalHeight)
+            GameOver();
     }
 
     public void Finish() {
@@ -76,6 +79,10 @@ public class Ball : MonoBehaviour {
 
             yield return null;
         }
+    }
+
+    private void GameOver(){
+        Time.timeScale = 0;
     }
 
     public void SetAtEnd(bool atEnd){
