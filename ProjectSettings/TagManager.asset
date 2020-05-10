@@ -11,6 +11,7 @@ TagManager:
   - OnGameOverUI
   - OnFinishUI
   - GUI
+  - LevelSelector
   layers:
   - Default
   - TransparentFX

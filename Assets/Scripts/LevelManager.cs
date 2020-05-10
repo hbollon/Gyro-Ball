@@ -6,7 +6,7 @@ public class LevelManager {
     private int CurrentLevelIndex { 
         get { return SceneManager.GetActiveScene().buildIndex; } 
     }
-    private int unlockedLevelIndex;
+    private static int unlockedLevelIndex;
     public int UnlockedLevelIndex{
         get { return unlockedLevelIndex; }
         set { UnlockedLevelIndex = value; }
