@@ -31,7 +31,7 @@ public class Ball : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = true;
             
         Vector3 endPosition = Vector3.zero;
-        endPosition.y += 0.3f;
+        endPosition.y += 0.4f;
         StartCoroutine(MoveTo(endPosition));
     }
 
@@ -66,7 +66,7 @@ public class Ball : MonoBehaviour {
                 transform.localPosition = new Vector3(transform.localPosition.x,
                                                 transform.localPosition.y + speed, 
                                                 transform.localPosition.z);
-                transform.Rotate(0,60 * Time.deltaTime,0);
+                transform.Rotate(0f, 60f * Time.deltaTime, 0f);
                 if(transform.localPosition.y >= (initialPosition.y + animHeight))
                     upDown = 0;
             }
@@ -74,7 +74,7 @@ public class Ball : MonoBehaviour {
                 transform.localPosition = new Vector3(transform.localPosition.x,
                                                 transform.localPosition.y - speed, 
                                                 transform.localPosition.z);
-                transform.Rotate(0,60 * Time.deltaTime, 0);
+                transform.Rotate(0f, 60f * Time.deltaTime, 0f);
                 if(transform.localPosition.y <= (initialPosition.y - animHeight))
                     upDown = 1;
             }
