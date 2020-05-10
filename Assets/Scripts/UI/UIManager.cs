@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public GameObject gui;
     private LevelManager levelManager;
     private GameObject[] pauseObjects;
+    private GameObject[] levelSelectorObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
     private GameObject[] finishObjects;
@@ -20,11 +21,13 @@ public class UIManager : MonoBehaviour
         gui.SetActive(true);
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
+        levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
 
         HidePaused();
+        HideLevelSelector();
         HideGameOver();
         HideFinished();
         ShowInGame();
@@ -76,6 +79,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // show level selector screen from pause menu
+    public void LevelSelectorOpenFromPause(){
+        print("LevelSelectorOpenFromPause()");
+        HidePaused();
+        ShowLevelSelector();
+    }
+
+    // back to pause menu from level selector screen
+    public void LevelSelectorback(){
+        HideLevelSelector();
+        ShowPaused();
+    }
+
     //shows objects with OnPauseUI tag
     public void ShowPaused()
     {
@@ -88,8 +104,10 @@ public class UIManager : MonoBehaviour
     //hides objects with OnPauseUI tag
     public void HidePaused()
     {
+        print("HidePaused()");
         foreach (GameObject g in pauseObjects)
         {
+        print(g.name);
             g.SetActive(false);
         }
     }
@@ -143,6 +161,24 @@ public class UIManager : MonoBehaviour
     public void HideGameOver()
     {
         foreach (GameObject g in gameOverObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with LevelSelector tag
+    public void ShowLevelSelector()
+    {
+        foreach (GameObject g in levelSelectorObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with LevelSelector tag
+    public void HideLevelSelector()
+    {
+        foreach (GameObject g in levelSelectorObjects)
         {
             g.SetActive(false);
         }
