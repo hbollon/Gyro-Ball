@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject gui;
-    private LevelManager levelManager;
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
     private GameObject[] inGameObjects;
@@ -16,7 +15,6 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        levelManager = new LevelManager();
 
         gui.SetActive(true);
 
@@ -187,10 +185,10 @@ public class UIManager : MonoBehaviour
     //loads inputted level
     public void LoadLevel(int levelIndex)
     {
-        levelManager.LoadLevel(levelIndex);
+        LevelManager.Instance.LoadLevel(levelIndex);
     }
 
     public void NextLevel(){
-        levelManager.NextLevel();
+        LevelManager.Instance.NextLevel();
     }
 }
