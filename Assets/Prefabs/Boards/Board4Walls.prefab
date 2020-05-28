@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872847301167427429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b150ce833ca3752fe99fe7f127c111da, type: 3}
+  m_Script: {fileID: 11500000, guid: f0aa6392f9777d694992c73521a7328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   smoothing: 0.1
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a2325a9141ad096a19aa5197989fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
+  ui: {fileID: 7304796636649248157, guid: 3b2c62b853f3552d9bc01f2a5aa923ab, type: 3}
   nbBalls: 1
 --- !u!65 &5141629496862359464
 BoxCollider:
