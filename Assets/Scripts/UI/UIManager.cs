@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     private GameObject[] finishObjects;
     private GameObject[] ballsController;
 
+    private bool pauseMenuOpen;
+    private bool gameOverMenuOpen;
+    private bool finishMenuOpen;
+    private int previousView;
+
     // Initialization
     void Start()
     {
@@ -78,16 +83,40 @@ public class UIManager : MonoBehaviour
     }
 
     // show level selector screen from pause menu
-    public void LevelSelectorOpenFromPause(){
-        print("LevelSelectorOpenFromPause()");
-        HidePaused();
+    public void LevelSelectorOpen(){
+        if(pauseMenuOpen){
+            HidePaused();
+            previousView = 1;
+        }
+        else if(gameOverMenuOpen){
+            HideGameOver();
+            previousView = 2;
+        }
+        else if(finishMenuOpen){
+            HideFinished();
+            previousView = 3;
+        }
+
         ShowLevelSelector();
     }
 
-    // back to pause menu from level selector screen
-    public void LevelSelectorback(){
+    // back from level selector screen
+    public void LevelSelectorBack(){
         HideLevelSelector();
-        ShowPaused();
+        switch (previousView)
+        {
+            case 1:
+                ShowPaused();
+                break;
+            case 2:
+                ShowGameOver();
+                break;
+            case 3:
+                ShowFinished();
+                break;
+            default:
+                break;
+        }
     }
 
     //shows objects with OnPauseUI tag
@@ -97,17 +126,17 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        pauseMenuOpen = true;
     }
 
     //hides objects with OnPauseUI tag
     public void HidePaused()
     {
-        print("HidePaused()");
         foreach (GameObject g in pauseObjects)
         {
-            print(g.name);
             g.SetActive(false);
         }
+        pauseMenuOpen = false;
     }
 
     //shows objects with InGameUI tag
@@ -135,6 +164,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        finishMenuOpen = true;
     }
 
     //hides objects with OnFinishUI tag
@@ -144,6 +174,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        finishMenuOpen = false;
     }
 
     //shows objects with OnGameOverUI tag
@@ -153,6 +184,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        gameOverMenuOpen = true;
     }
 
     //hides objects with OnGameOverUI tag
@@ -162,6 +194,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        gameOverMenuOpen = false;
     }
 
     //shows objects with LevelSelector tag

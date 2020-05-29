@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &219056965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8870732530468072222, guid: 9a5d18047979b51cfab97c5cdfbce345,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066786194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &573422833
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,11 +266,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2406098522080076370, guid: 9a5d18047979b51cfab97c5cdfbce345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406098523058458324, guid: 9a5d18047979b51cfab97c5cdfbce345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406098523285262871, guid: 9a5d18047979b51cfab97c5cdfbce345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2406098523512003674, guid: 9a5d18047979b51cfab97c5cdfbce345,
         type: 3}
       propertyPath: Board
       value: 
       objectReference: {fileID: 1701684518}
+    - target: {fileID: 2406098523661873747, guid: 9a5d18047979b51cfab97c5cdfbce345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594575978596526213, guid: 9a5d18047979b51cfab97c5cdfbce345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5d18047979b51cfab97c5cdfbce345, type: 3}
 --- !u!1 &1490730320 stripped
@@ -828,7 +859,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ui
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 219056965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071535054d60315d09d3b9274d6a2de7, type: 3}
 --- !u!1001 &8991475678156228189
