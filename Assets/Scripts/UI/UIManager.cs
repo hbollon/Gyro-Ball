@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
         print("HidePaused()");
         foreach (GameObject g in pauseObjects)
         {
-        print(g.name);
+            print(g.name);
             g.SetActive(false);
         }
     }

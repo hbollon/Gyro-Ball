@@ -63,4 +63,12 @@ public class LevelManager : MonoBehaviour {
             SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
         }
     }
+
+    public bool LevelIsUnlocked(int index){
+        return levels[index].unlocked;
+    }
+
+    public Level GetLevel(int index){
+        return levels[index];
+    }
 }
