@@ -10,7 +10,7 @@ public class LevelButton : MonoBehaviour, IPointerDownHandler {
             gameObject.GetComponentInChildren<Text>().text = LevelManager.Instance.GetLevel(levelIndex).levelNumber.ToString();
         } else {
             gameObject.GetComponentInChildren<Text>().gameObject.SetActive(false);
-            gameObject.GetComponent<Image>().sprite = (Sprite)Resources.Load("Sprites/UI/button_locked_hover.png");
+            gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/button_locked_hover");;
         }
     }
 

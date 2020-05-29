@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
 
             InitLevels();
-            LoadLevel(1);
+            LoadLevel(0);
         } else {
             Destroy(gameObject);
         }
