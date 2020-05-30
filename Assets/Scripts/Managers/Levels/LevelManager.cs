@@ -41,7 +41,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void InitLevels() {
+        int progression = LoadProgression();
         for(int i = 0; i<levels.Count; i++) {
+            if(progression <= i)
+                levels[i].unlocked = true;
             levels[i].LevelIndex = i;
         }
     }
@@ -70,5 +73,29 @@ public class LevelManager : MonoBehaviour {
 
     public Level GetLevel(int index){
         return levels[index];
+    }
+
+    public int GetProgression(){
+        for(int i = 0; i<levels.Count; i++) {
+            if(!LevelIsUnlocked(i))
+                return i-1;
+        }
+        return levels.Count-1;
+    }
+
+    private void SaveProgression(){
+        PlayerPrefs.SetInt("LevelsUnlocked", GetProgression());
+    }
+
+    private int LoadProgression(){
+        if(PlayerPrefs.HasKey("LevelsUnlocked"))
+            return PlayerPrefs.GetInt("LevelsUnlocked");
+        else
+            return 1;
+    }
+
+    private void ResetProgression(){
+        if(PlayerPrefs.HasKey("LevelsUnlocked"))
+            PlayerPrefs.DeleteKey("LevelsUnlocked");
     }
 }
