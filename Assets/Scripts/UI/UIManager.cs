@@ -4,27 +4,33 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject gui;
-    private LevelManager levelManager;
     private GameObject[] pauseObjects;
+    private GameObject[] levelSelectorObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
     private GameObject[] finishObjects;
     private GameObject[] ballsController;
 
+    private bool pauseMenuOpen;
+    private bool gameOverMenuOpen;
+    private bool finishMenuOpen;
+    private int previousView;
+
     // Initialization
     void Start()
     {
         Time.timeScale = 1;
-        levelManager = new LevelManager();
 
         gui.SetActive(true);
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
+        levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
 
         HidePaused();
+        HideLevelSelector();
         HideGameOver();
         HideFinished();
         ShowInGame();
@@ -50,6 +56,8 @@ public class UIManager : MonoBehaviour
                 HidePaused();
             }
         }
+        else if(Input.GetKeyDown(KeyCode.N))
+            NextLevel();
     }
 
 
@@ -76,6 +84,43 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // show level selector screen from pause menu
+    public void LevelSelectorOpen(){
+        if(pauseMenuOpen){
+            HidePaused();
+            previousView = 1;
+        }
+        else if(gameOverMenuOpen){
+            HideGameOver();
+            previousView = 2;
+        }
+        else if(finishMenuOpen){
+            HideFinished();
+            previousView = 3;
+        }
+
+        ShowLevelSelector();
+    }
+
+    // back from level selector screen
+    public void LevelSelectorBack(){
+        HideLevelSelector();
+        switch (previousView)
+        {
+            case 1:
+                ShowPaused();
+                break;
+            case 2:
+                ShowGameOver();
+                break;
+            case 3:
+                ShowFinished();
+                break;
+            default:
+                break;
+        }
+    }
+
     //shows objects with OnPauseUI tag
     public void ShowPaused()
     {
@@ -83,6 +128,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        pauseMenuOpen = true;
     }
 
     //hides objects with OnPauseUI tag
@@ -92,6 +138,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        pauseMenuOpen = false;
     }
 
     //shows objects with InGameUI tag
@@ -119,6 +166,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        finishMenuOpen = true;
     }
 
     //hides objects with OnFinishUI tag
@@ -128,6 +176,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        finishMenuOpen = false;
     }
 
     //shows objects with OnGameOverUI tag
@@ -137,6 +186,7 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(true);
         }
+        gameOverMenuOpen = true;
     }
 
     //hides objects with OnGameOverUI tag
@@ -146,15 +196,34 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        gameOverMenuOpen = false;
+    }
+
+    //shows objects with LevelSelector tag
+    public void ShowLevelSelector()
+    {
+        foreach (GameObject g in levelSelectorObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with LevelSelector tag
+    public void HideLevelSelector()
+    {
+        foreach (GameObject g in levelSelectorObjects)
+        {
+            g.SetActive(false);
+        }
     }
 
     //loads inputted level
     public void LoadLevel(int levelIndex)
     {
-        levelManager.LoadLevel(levelIndex);
+        LevelManager.Instance.LoadLevel(levelIndex);
     }
 
     public void NextLevel(){
-        levelManager.NextLevel();
+        LevelManager.Instance.NextLevel();
     }
 }
