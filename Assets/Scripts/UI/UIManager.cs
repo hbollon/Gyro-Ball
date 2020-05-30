@@ -56,6 +56,8 @@ public class UIManager : MonoBehaviour
                 HidePaused();
             }
         }
+        else if(Input.GetKeyDown(KeyCode.N))
+            NextLevel();
     }
 
 

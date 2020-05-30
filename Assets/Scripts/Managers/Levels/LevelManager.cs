@@ -27,6 +27,11 @@ public class LevelManager : MonoBehaviour {
         get { return currentLevel; }
     }
 
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.R))
+            ResetProgression();
+    }
+
     private void Awake() {
         if (Instance == null)
         {
@@ -42,8 +47,9 @@ public class LevelManager : MonoBehaviour {
 
     private void InitLevels() {
         int progression = LoadProgression();
+        print("Levels unlocked : " + progression);
         for(int i = 0; i<levels.Count; i++) {
-            if(progression <= i)
+            if(progression >= i)
                 levels[i].unlocked = true;
             levels[i].LevelIndex = i;
         }
@@ -64,6 +70,7 @@ public class LevelManager : MonoBehaviour {
             levels[currentLevel.LevelIndex + 1].unlocked = true;
             currentLevel = levels[currentLevel.LevelIndex + 1];
             SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
+            SaveProgression();
         }
     }
 
@@ -80,7 +87,7 @@ public class LevelManager : MonoBehaviour {
             if(!LevelIsUnlocked(i))
                 return i-1;
         }
-        return levels.Count-1;
+        return levels.Count;
     }
 
     private void SaveProgression(){
