@@ -6,15 +6,22 @@ public class GameFinish : MonoBehaviour {
     public int nbBalls;
     private int nbBallsAtEnd;
     private GameObject[] balls;
+    private bool levelFinished;
 
     private void Start() {
         nbBallsAtEnd = 0;
+        levelFinished = false;
         if (GameObject.FindWithTag("Ball"))
             balls = GameObject.FindGameObjectsWithTag("Ball");
     }
 
     private void Update() {
-        if(nbBallsAtEnd == nbBalls){
+        if(Input.GetKeyDown(KeyCode.F))
+            nbBallsAtEnd = nbBalls;
+
+        if(nbBallsAtEnd == nbBalls && !levelFinished){
+            levelFinished = true;
+            LevelManager.Instance.UnlockNextLevel();
             ui.GetComponent<UIManager>().HideInGame();
             ui.GetComponent<UIManager>().ShowFinished();
         }

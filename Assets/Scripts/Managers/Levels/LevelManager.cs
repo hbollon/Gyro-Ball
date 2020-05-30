@@ -64,12 +64,16 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void NextLevel() {
+        currentLevel = levels[currentLevel.LevelIndex + 1];
+        SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
+        SaveProgression();
+    }
+
+    public void UnlockNextLevel(){
         if ((CurrentLevelIndex != SceneManager.sceneCountInBuildSettings) &&
             (currentLevel.levelNumber <= levels.Count)) {
             
             levels[currentLevel.LevelIndex + 1].unlocked = true;
-            currentLevel = levels[currentLevel.LevelIndex + 1];
-            SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
             SaveProgression();
         }
     }
