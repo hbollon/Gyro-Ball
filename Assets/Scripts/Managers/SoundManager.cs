@@ -44,6 +44,10 @@ public class SoundManager : MonoBehaviour {
 
         WoodMusic = Resources.Load<AudioClip>("Music/Siddhartha_Lightstream");
         WoodAmbient = Resources.Load<AudioClip>("Sound/Forest/ForestAmbient");
+
+        MusicSource.volume = 0.3f;
+        AmbientSource.volume = 0.3f;
+        EffectsSource.volume = 1f;
     }
 
     public void StartMusicWithTheme(int theme){

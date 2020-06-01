@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour {
     private bool attached;
     private float speedEndSeconds = 1.0f;
     public float minimalHeight = 0f;
+    private int nbContactPoints;
 
     private void Start() {
         // Disable sleep for Rigidbody
@@ -27,7 +28,14 @@ public class Ball : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Board"){
             SoundManager.Instance.PlayCollideSound();
+            nbContactPoints = other.contactCount;
         }
+    }
+
+    private void OnCollisionStay(Collision other) {
+        if(nbContactPoints < other.contactCount && other.contactCount <= 3)
+            SoundManager.Instance.PlayCollideSound();
+        nbContactPoints = other.contactCount;
     }
 
     public void Finish() {
