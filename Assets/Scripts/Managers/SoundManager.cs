@@ -5,16 +5,22 @@ public class SoundManager : MonoBehaviour {
 
     // Audio players components.
 	public AudioSource EffectsSource;
+	public AudioSource AmbientSource;
 	public AudioSource MusicSource;
 
-	// Random pitch adjustment range.
-	public float LowPitchRange = .95f;
-	public float HighPitchRange = 1.05f;
+    private bool musicEnabled;
+    private bool ambientEnabled;
+    private bool soundEnabled;
+
 
     private void Awake() {
         if (Instance == null){
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            musicEnabled = true;
+            ambientEnabled = true;
+            soundEnabled = true;
         } else {
             Destroy(gameObject);
         }
@@ -25,7 +31,9 @@ public class SoundManager : MonoBehaviour {
         {
             case 0:
             case 1:
-                
+                PlayMusic(Resources.Load<AudioClip>("Music/Siddhartha_Lightstream"));
+                PlayAmbient(Resources.Load<AudioClip>("Sound/Forest/ForestAmbient"));
+                break;
 
             default:
                 break;
@@ -35,15 +43,35 @@ public class SoundManager : MonoBehaviour {
     // Play a single clip through the sound effects source.
     public void Play(AudioClip clip)
     {
-        EffectsSource.clip = clip;
-        EffectsSource.Play();
+        if(soundEnabled){
+            EffectsSource.clip = clip;
+            EffectsSource.Play();
+        }
     }
 
     // Play a single clip through the music source.
     public void PlayMusic(AudioClip clip)
     {
-        MusicSource.clip = clip;
-        MusicSource.loop = true;
-        MusicSource.Play();
+        if(musicEnabled){
+            MusicSource.clip = clip;
+            MusicSource.loop = true;
+            MusicSource.Play();
+        }
+    }
+
+    // Play a single clip through the ambient source.
+    public void PlayAmbient(AudioClip clip)
+    {
+        if(ambientEnabled){
+            AmbientSource.clip = clip;
+            AmbientSource.loop = true;
+            AmbientSource.Play();
+        }
+    }
+
+    public void StopAll(){
+        MusicSource.Stop();
+        AmbientSource.Stop();
+        EffectsSource.Stop();
     }
 }
