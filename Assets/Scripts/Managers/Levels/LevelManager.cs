@@ -59,6 +59,7 @@ public class LevelManager : MonoBehaviour {
         if (index < levels.Count && index >= 0 && levels[index].unlocked) {
             currentLevel = levels[index];
             SceneManager.LoadScene(currentLevel.LevelIndex);
+            SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
         }
 
     }
@@ -66,6 +67,7 @@ public class LevelManager : MonoBehaviour {
     public void NextLevel() {
         currentLevel = levels[currentLevel.LevelIndex + 1];
         SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
+        SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
         SaveProgression();
     }
 

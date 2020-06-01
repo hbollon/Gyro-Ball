@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour {
     private bool musicEnabled;
     private bool ambientEnabled;
     private bool soundEnabled;
+    private int currentTheme;
 
 
     private void Awake() {
@@ -27,16 +28,19 @@ public class SoundManager : MonoBehaviour {
     }
 
     public void StartMusicWithTheme(int theme){
-        switch (theme)
-        {
-            case 0:
-            case 1:
-                PlayMusic(Resources.Load<AudioClip>("Music/Siddhartha_Lightstream"));
-                PlayAmbient(Resources.Load<AudioClip>("Sound/Forest/ForestAmbient"));
-                break;
+        if(theme != currentTheme){
+            switch (theme)
+            {
+                case 0:
+                case 1:
+                    PlayMusic(Resources.Load<AudioClip>("Music/Siddhartha_Lightstream"));
+                    PlayAmbient(Resources.Load<AudioClip>("Sound/Forest/ForestAmbient"));
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
+            currentTheme = theme;
         }
     }
 
