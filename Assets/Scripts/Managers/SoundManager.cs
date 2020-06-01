@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour {
 	public AudioSource AmbientSource;
 	public AudioSource MusicSource;
 
+    private AudioClip WoodAmbient;
+    private AudioClip WoodMusic;
     private List<AudioClip> WoodTocSounds;
 
     private bool musicEnabled;
@@ -39,6 +41,9 @@ public class SoundManager : MonoBehaviour {
         WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/LoudToc2"));
         WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/MediumToc1"));
         WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/MediumToc2"));
+
+        WoodMusic = Resources.Load<AudioClip>("Music/Siddhartha_Lightstream");
+        WoodAmbient = Resources.Load<AudioClip>("Sound/Forest/ForestAmbient");
     }
 
     public void StartMusicWithTheme(int theme){
@@ -47,8 +52,8 @@ public class SoundManager : MonoBehaviour {
             {
                 case 0:
                 case 1:
-                    PlayMusic(Resources.Load<AudioClip>("Music/Siddhartha_Lightstream"));
-                    PlayAmbient(Resources.Load<AudioClip>("Sound/Forest/ForestAmbient"));
+                    PlayMusic(WoodMusic);
+                    PlayAmbient(WoodAmbient);
                     break;
 
                 default:

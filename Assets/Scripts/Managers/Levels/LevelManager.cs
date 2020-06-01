@@ -27,6 +27,10 @@ public class LevelManager : MonoBehaviour {
         get { return currentLevel; }
     }
 
+    private void Start() {
+        LoadLevel(0);
+    }
+
     private void Update() {
         if(Input.GetKeyDown(KeyCode.R))
             ResetProgression();
@@ -39,7 +43,6 @@ public class LevelManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
 
             InitLevels();
-            LoadLevel(0);
         } else {
             Destroy(gameObject);
         }

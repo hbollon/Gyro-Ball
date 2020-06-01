@@ -9,7 +9,6 @@ public class Ball : MonoBehaviour {
     private bool attached;
     private float speedEndSeconds = 1.0f;
     public float minimalHeight = 0f;
-    private int contactsPointsWithBoard;
 
     private void Start() {
         // Disable sleep for Rigidbody
@@ -18,7 +17,6 @@ public class Ball : MonoBehaviour {
         atEnd = false;
         falled = false;
         attached = false;
-        contactsPointsWithBoard = -1;
     }
 
     private void Update() {
