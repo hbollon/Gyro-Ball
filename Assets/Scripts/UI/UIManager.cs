@@ -86,15 +86,19 @@ public class UIManager : MonoBehaviour
 
     // show level selector screen from pause menu
     public void LevelSelectorOpen(){
+        print("LevelSelectorOpen()");
         if(pauseMenuOpen){
+            print("LevelSelectorOpen() : pauseMenuOpen");
             HidePaused();
             previousView = 1;
         }
         else if(gameOverMenuOpen){
+            print("LevelSelectorOpen() : gameOverMenuOpen");
             HideGameOver();
             previousView = 2;
         }
         else if(finishMenuOpen){
+            print("LevelSelectorOpen() : finishMenuOpen");
             HideFinished();
             previousView = 3;
         }
@@ -182,6 +186,7 @@ public class UIManager : MonoBehaviour
     //shows objects with OnGameOverUI tag
     public void ShowGameOver()
     {
+        print("ShowGameOver()");
         foreach (GameObject g in gameOverObjects)
         {
             g.SetActive(true);
@@ -192,6 +197,7 @@ public class UIManager : MonoBehaviour
     //hides objects with OnGameOverUI tag
     public void HideGameOver()
     {
+        print("HideGameOver()");
         foreach (GameObject g in gameOverObjects)
         {
             g.SetActive(false);
@@ -202,6 +208,7 @@ public class UIManager : MonoBehaviour
     //shows objects with LevelSelector tag
     public void ShowLevelSelector()
     {
+        print("ShowLevelSelector()");
         foreach (GameObject g in levelSelectorObjects)
         {
             g.SetActive(true);

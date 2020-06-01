@@ -7,10 +7,12 @@ public class GameFinish : MonoBehaviour {
     private int nbBallsAtEnd;
     private GameObject[] balls;
     private bool levelFinished;
+    private bool gameOver;
 
     private void Start() {
         nbBallsAtEnd = 0;
         levelFinished = false;
+        gameOver = false;
         if (GameObject.FindWithTag("Ball"))
             balls = GameObject.FindGameObjectsWithTag("Ball");
     }
@@ -27,10 +29,11 @@ public class GameFinish : MonoBehaviour {
         }
 
         foreach (GameObject ball in balls){
-            if(ball.GetComponent<Ball>().GetFalled()){
-                Time.timeScale = 0;
+            if((ball.GetComponent<Ball>().GetFalled() || Input.GetKeyDown(KeyCode.G)) && !gameOver){
+                gameOver = true;
                 ui.GetComponent<UIManager>().HideInGame();
                 ui.GetComponent<UIManager>().ShowGameOver();
+                ball.SetActive(false);
                 break;
             }
         }
