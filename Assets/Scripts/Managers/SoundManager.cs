@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour {
     public static SoundManager Instance { get; private set; }
@@ -8,10 +9,12 @@ public class SoundManager : MonoBehaviour {
 	public AudioSource AmbientSource;
 	public AudioSource MusicSource;
 
+    private List<AudioClip> WoodTocSounds;
+
     private bool musicEnabled;
     private bool ambientEnabled;
     private bool soundEnabled;
-    private int currentTheme;
+    private int currentTheme = -1;
 
 
     private void Awake() {
@@ -22,9 +25,20 @@ public class SoundManager : MonoBehaviour {
             musicEnabled = true;
             ambientEnabled = true;
             soundEnabled = true;
+            InitSounds();
         } else {
             Destroy(gameObject);
         }
+    }
+
+    private void InitSounds(){
+        WoodTocSounds = new List<AudioClip>();
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/LightToc1"));
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/LightToc2"));
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/LoudToc1"));
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/LoudToc2"));
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/MediumToc1"));
+        WoodTocSounds.Add(Resources.Load<AudioClip>("Sound/CollideSounds/MediumToc2"));
     }
 
     public void StartMusicWithTheme(int theme){
@@ -41,6 +55,20 @@ public class SoundManager : MonoBehaviour {
                     break;
             }
             currentTheme = theme;
+        }
+    }
+
+    public void PlayCollideSound(){
+        System.Random rnd = new System.Random();
+        switch (currentTheme)
+        {
+            case 0:
+            case 1:
+                Play(WoodTocSounds[rnd.Next(WoodTocSounds.Count)]);
+                break;
+
+            default:
+                break;
         }
     }
 

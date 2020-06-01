@@ -8,8 +8,8 @@ public class Ball : MonoBehaviour {
     private bool falled;
     private bool attached;
     private float speedEndSeconds = 1.0f;
-
     public float minimalHeight = 0f;
+    private int contactsPointsWithBoard;
 
     private void Start() {
         // Disable sleep for Rigidbody
@@ -18,11 +18,18 @@ public class Ball : MonoBehaviour {
         atEnd = false;
         falled = false;
         attached = false;
+        contactsPointsWithBoard = -1;
     }
 
     private void Update() {
         if(transform.position.y < minimalHeight)
             GameOver();
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Board"){
+            SoundManager.Instance.PlayCollideSound();
+        }
     }
 
     public void Finish() {
