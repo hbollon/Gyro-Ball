@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothing: 0.1
-  speed: 30
+  speed: 20
 --- !u!1 &8096151429007428143
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8096151429007428143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.12, y: -0.1654, z: 1.1399999}
+  m_LocalPosition: {x: 1.106, y: -0.167, z: 1.144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872847301167427432}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a2325a9141ad096a19aa5197989fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 7304796636649248157, guid: 3b2c62b853f3552d9bc01f2a5aa923ab, type: 3}
+  ui: {fileID: 0}
   nbBalls: 1
 --- !u!65 &5141629496862359464
 BoxCollider:

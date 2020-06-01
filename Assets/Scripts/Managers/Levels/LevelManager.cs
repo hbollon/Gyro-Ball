@@ -27,6 +27,10 @@ public class LevelManager : MonoBehaviour {
         get { return currentLevel; }
     }
 
+    private void Start() {
+        LoadLevel(0);
+    }
+
     private void Update() {
         if(Input.GetKeyDown(KeyCode.R))
             ResetProgression();
@@ -39,7 +43,6 @@ public class LevelManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
 
             InitLevels();
-            LoadLevel(0);
         } else {
             Destroy(gameObject);
         }
@@ -59,6 +62,7 @@ public class LevelManager : MonoBehaviour {
         if (index < levels.Count && index >= 0 && levels[index].unlocked) {
             currentLevel = levels[index];
             SceneManager.LoadScene(currentLevel.LevelIndex);
+            SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
         }
 
     }
@@ -66,6 +70,7 @@ public class LevelManager : MonoBehaviour {
     public void NextLevel() {
         currentLevel = levels[currentLevel.LevelIndex + 1];
         SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
+        SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
         SaveProgression();
     }
 
