@@ -252,4 +252,12 @@ public class UIManager : MonoBehaviour
     public void NextLevel(){
         LevelManager.Instance.NextLevel();
     }
+
+    /************************/
+    /* Settings screen part */
+    /************************/
+
+    public void SetQuality(int preset) {
+        GameManager.Instance.SetQualitySetting(preset);
+    }
 }
