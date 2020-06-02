@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance { get; private set; }
 
     private int quality;
-    public int Quality { get; private set;}
+    public int Quality {    
+        get { return quality; } 
+        private set { quality = value; }
+    }
 
     private void Awake() {
         if (Instance == null){
@@ -21,43 +24,27 @@ public class GameManager : MonoBehaviour {
 
     private void InitSettings()
     {
-        if(PlayerPrefs.HasKey("Quality"))
-            SetQualitySetting(PlayerPrefs.GetInt("Quality"));
+        if(PlayerPrefs.HasKey("Quality")){
+            quality = PlayerPrefs.GetInt("Quality");
+            QualitySettings.SetQualityLevel(quality, true);
+        }
     }
 
     public void SetQualitySetting(int preset){
         switch(preset)
         {
             case 0:
-                QualitySettings.SetQualityLevel(preset, true);
-                PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'Very Low'");
-                break;
             case 1:
-                QualitySettings.SetQualityLevel(preset, true);
-                PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'Low'");
-                break;
             case 2:
-                QualitySettings.SetQualityLevel(preset, true);
-                PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'Medium'");
-                break;
             case 3:
-                QualitySettings.SetQualityLevel(preset, true);
-                PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'High'");
-                break;
             case 4:
-                QualitySettings.SetQualityLevel(preset, true);
-                PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'Very High'");
-                break;
             case 5:
+                quality = preset;
                 QualitySettings.SetQualityLevel(preset, true);
                 PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to 'Ultra'");
+                Debug.Log("Quality settings set to " + quality);
                 break;
+
             default:
                 throw new ArgumentException("Invalid quality preset");
             }

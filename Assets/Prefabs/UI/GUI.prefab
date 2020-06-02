@@ -823,7 +823,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7, type: 3}
+    m_Font: {fileID: 12800000, guid: f4c99a340a6e6504aa6e992b7a253612, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -2051,6 +2051,7 @@ GameObject:
   - component: {fileID: 8343986245454498609}
   - component: {fileID: 2267711548265560399}
   - component: {fileID: 5392901541702546185}
+  - component: {fileID: 3202010719997457890}
   m_Layer: 5
   m_Name: High
   m_TagString: Untagged
@@ -2169,6 +2170,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3202010719997457890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169174784991445714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ca55f987adc0869f68d33f86f351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 3
 --- !u!1 &3225180477399606288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2399,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7, type: 3}
+    m_Font: {fileID: 12800000, guid: f4c99a340a6e6504aa6e992b7a253612, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -5792,7 +5806,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7, type: 3}
+    m_Font: {fileID: 12800000, guid: f4c99a340a6e6504aa6e992b7a253612, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -6254,7 +6268,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7, type: 3}
+    m_Font: {fileID: 12800000, guid: f4c99a340a6e6504aa6e992b7a253612, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -6368,6 +6382,7 @@ GameObject:
   - component: {fileID: 8205564163478649522}
   - component: {fileID: 2437569749966539913}
   - component: {fileID: 2613937276559091786}
+  - component: {fileID: 929841684076786115}
   m_Layer: 5
   m_Name: Medium
   m_TagString: Untagged
@@ -6486,6 +6501,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &929841684076786115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559894066549502119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ca55f987adc0869f68d33f86f351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 2
 --- !u!1 &5647891484768781032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7659,7 +7687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7, type: 3}
+    m_Font: {fileID: 12800000, guid: f4c99a340a6e6504aa6e992b7a253612, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -8005,6 +8033,7 @@ GameObject:
   - component: {fileID: 3189120504296004037}
   - component: {fileID: 1815156754431979732}
   - component: {fileID: 5453346248809308484}
+  - component: {fileID: 1055291572893549537}
   m_Layer: 5
   m_Name: Low
   m_TagString: Untagged
@@ -8123,6 +8152,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1055291572893549537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787899506200454282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ca55f987adc0869f68d33f86f351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 1
 --- !u!1 &7833941126790333370
 GameObject:
   m_ObjectHideFlags: 0
