@@ -12,6 +12,7 @@ TagManager:
   - OnFinishUI
   - GUI
   - LevelSelector
+  - SettingsUI
   layers:
   - Default
   - TransparentFX
