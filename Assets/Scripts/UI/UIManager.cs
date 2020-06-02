@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public GameObject gui;
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
+    private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
     private GameObject[] finishObjects;
@@ -21,16 +22,16 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        gui.SetActive(true);
-
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
+        settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
 
         HidePaused();
         HideLevelSelector();
+        HideSettings();
         HideGameOver();
         HideFinished();
         ShowInGame();
@@ -219,6 +220,24 @@ public class UIManager : MonoBehaviour
     public void HideLevelSelector()
     {
         foreach (GameObject g in levelSelectorObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with SettingsUI tag
+    public void ShowSettings()
+    {
+        foreach (GameObject g in settingsObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with SettingsUI tag
+    public void HideSettings()
+    {
+        foreach (GameObject g in settingsObjects)
         {
             g.SetActive(false);
         }
