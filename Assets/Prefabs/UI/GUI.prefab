@@ -1932,6 +1932,7 @@ GameObject:
   - component: {fileID: 1025401627784114421}
   - component: {fileID: 1358673961548737516}
   - component: {fileID: 2478908329014017820}
+  - component: {fileID: 2917020678728339312}
   m_Layer: 5
   m_Name: Static
   m_TagString: Untagged
@@ -2038,7 +2039,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1358673961548737516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8947634752798137402}
+        m_MethodName: SetCameraMode
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2917020678728339312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147564773826543078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ea55ac3a3cf2c8382a3fbaa02552e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 0
 --- !u!1 &3169174784991445714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2698,7 @@ GameObject:
   - component: {fileID: 4813495825061395153}
   - component: {fileID: 6418498895315097605}
   - component: {fileID: 3697509556668583760}
+  - component: {fileID: 6402389304267889918}
   m_Layer: 5
   m_Name: Dynamic
   m_TagString: Untagged
@@ -2779,7 +2805,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6418498895315097605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8947634752798137402}
+        m_MethodName: SetCameraMode
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6402389304267889918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877180669010021519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ea55ac3a3cf2c8382a3fbaa02552e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 1
 --- !u!1 &3930841454839059289
 GameObject:
   m_ObjectHideFlags: 0

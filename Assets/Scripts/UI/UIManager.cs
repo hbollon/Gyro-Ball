@@ -260,4 +260,8 @@ public class UIManager : MonoBehaviour
     public void SetQuality(int preset) {
         GameManager.Instance.SetQualitySetting(preset);
     }
+
+    public void SetCameraMode(int mode) {
+        GameManager.Instance.SetCameraMode(mode);
+    }
 }
