@@ -57,21 +57,21 @@ public class SoundManager : MonoBehaviour {
         effectsVolumeReduce = 1f;
 
         if(PlayerPrefs.HasKey("MusicVolume")){
-            MusicSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+            MusicSource.volume = PlayerPrefs.GetFloat("MusicVolume") * musicVolumeReduce;
         }
         if(PlayerPrefs.HasKey("MusicMute")){
             MusicSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("MusicMute"));
         }
 
         if(PlayerPrefs.HasKey("AmbientVolume")){
-            AmbientSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
+            AmbientSource.volume = PlayerPrefs.GetFloat("AmbientVolume") * ambientVolumeReduce;
         }
         if(PlayerPrefs.HasKey("AmbientMute")){
             AmbientSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("AmbientMute"));
         }
 
         if(PlayerPrefs.HasKey("EffectsVolume")){
-            EffectsSource.volume = PlayerPrefs.GetFloat("EffectsVolume");
+            EffectsSource.volume = PlayerPrefs.GetFloat("EffectsVolume") * effectsVolumeReduce;
         }
         if(PlayerPrefs.HasKey("EffectsMute")){
             EffectsSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("EffectsMute"));
@@ -143,7 +143,7 @@ public class SoundManager : MonoBehaviour {
         {
             case AudioSourceComponant.Music:
                 MusicSource.volume = value * musicVolumeReduce;
-                PlayerPrefs.SetFloat("MusicMute", value);
+                PlayerPrefs.SetFloat("MusicVolume", value);
                 break;
             case AudioSourceComponant.Ambient:
                 AmbientSource.volume = value * ambientVolumeReduce;
