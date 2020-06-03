@@ -264,4 +264,32 @@ public class UIManager : MonoBehaviour
     public void SetCameraMode(int mode) {
         GameManager.Instance.SetCameraMode(mode);
     }
+
+    public void MuteMusic(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Music, value);
+    }
+
+    public void MuteAmbient(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Ambient, value);
+    }
+
+    public void MuteEffects(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Effects, value);
+    }
+
+    public void MuteAll(bool value){
+        SoundManager.Instance.MuteAll(value);
+    }
+
+    public void SetMusicVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Music, value);
+    }
+
+    public void SetAmbientVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Ambient, value);
+    }
+
+    public void SetEffectsVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Effects, value);
+    }
 }
