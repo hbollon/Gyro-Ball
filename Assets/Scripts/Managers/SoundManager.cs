@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour {
 	public AudioSource AmbientSource;
 	public AudioSource MusicSource;
 
+    public AudioListener SceneAudioListener;
+
     private AudioClip WoodAmbient;
     private AudioClip WoodMusic;
     private List<AudioClip> WoodTocSounds;
@@ -24,6 +26,8 @@ public class SoundManager : MonoBehaviour {
     private float musicVolumeReduce;
     private float ambientVolumeReduce;
     private float effectsVolumeReduce;
+
+    public bool SoundDisabled{get; private set;}
 
 
     private void Awake() {
@@ -76,6 +80,8 @@ public class SoundManager : MonoBehaviour {
         if(PlayerPrefs.HasKey("EffectsMute")){
             EffectsSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("EffectsMute"));
         }
+
+        SoundDisabled = false;
     }
 
     public void StartMusicWithTheme(int theme){
@@ -178,9 +184,14 @@ public class SoundManager : MonoBehaviour {
         }
     }
 
-    public void MuteAll(bool value){
-            MusicSource.mute = value;
-            AmbientSource.mute = value;
-            EffectsSource.mute = value;
+    public void MuteAll(bool value){ 
+         if (value){
+             AudioListener.volume = 0f;
+             SoundDisabled = true;
+         }
+         else{
+             AudioListener.volume = 1f;
+             SoundDisabled = false;
+         }
     }
 }
