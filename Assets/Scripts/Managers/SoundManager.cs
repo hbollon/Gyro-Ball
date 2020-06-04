@@ -64,7 +64,9 @@ public class SoundManager : MonoBehaviour {
             MusicSource.volume = PlayerPrefs.GetFloat("MusicVolume") * musicVolumeReduce;
         }
         if(PlayerPrefs.HasKey("MusicMute")){
+            Debug.Log("Save : " + PlayerPrefs.GetInt("MusicMute"));
             MusicSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("MusicMute"));
+            Debug.Log("Save apply : " + MusicSource.mute);
         }
 
         if(PlayerPrefs.HasKey("AmbientVolume")){
@@ -165,6 +167,7 @@ public class SoundManager : MonoBehaviour {
     }
 
     public void Mute(AudioSourceComponant src, bool value){
+        Debug.Log(value);
         switch (src)
         {
             case AudioSourceComponant.Music:

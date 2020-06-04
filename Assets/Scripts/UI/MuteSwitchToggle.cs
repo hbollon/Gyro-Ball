@@ -5,10 +5,6 @@ public class MuteSwitchToggle : MonoBehaviour {
     private bool toggle;
     private bool baseValue;
 
-    private void Awake() {
-        
-    }
-
     private void Start() {
         UpdateBaseValue();
         if(baseValue){
