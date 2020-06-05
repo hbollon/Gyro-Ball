@@ -1,13 +1,18 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour {
     public static SoundManager Instance { get; private set; }
 
+    [System.Serializable] public enum AudioSourceComponant { Music, Ambient, Effects }
+
     // Audio players components.
 	public AudioSource EffectsSource;
 	public AudioSource AmbientSource;
 	public AudioSource MusicSource;
+
+    public AudioListener SceneAudioListener;
 
     private AudioClip WoodAmbient;
     private AudioClip WoodMusic;
@@ -17,6 +22,12 @@ public class SoundManager : MonoBehaviour {
     private bool ambientEnabled;
     private bool soundEnabled;
     private int currentTheme = -1;
+
+    private float musicVolumeReduce;
+    private float ambientVolumeReduce;
+    private float effectsVolumeReduce;
+
+    public bool SoundDisabled{get; private set;}
 
 
     private void Awake() {
@@ -45,9 +56,34 @@ public class SoundManager : MonoBehaviour {
         WoodMusic = Resources.Load<AudioClip>("Music/Siddhartha_Lightstream");
         WoodAmbient = Resources.Load<AudioClip>("Sound/Forest/ForestAmbient");
 
-        MusicSource.volume = 0.3f;
-        AmbientSource.volume = 0.3f;
-        EffectsSource.volume = 1f;
+        musicVolumeReduce = 0.3f;
+        ambientVolumeReduce = 0.3f;
+        effectsVolumeReduce = 1f;
+
+        if(PlayerPrefs.HasKey("MusicVolume")){
+            MusicSource.volume = PlayerPrefs.GetFloat("MusicVolume") * musicVolumeReduce;
+        }
+        if(PlayerPrefs.HasKey("MusicMute")){
+            Debug.Log("Save : " + PlayerPrefs.GetInt("MusicMute"));
+            MusicSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("MusicMute"));
+            Debug.Log("Save apply : " + MusicSource.mute);
+        }
+
+        if(PlayerPrefs.HasKey("AmbientVolume")){
+            AmbientSource.volume = PlayerPrefs.GetFloat("AmbientVolume") * ambientVolumeReduce;
+        }
+        if(PlayerPrefs.HasKey("AmbientMute")){
+            AmbientSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("AmbientMute"));
+        }
+
+        if(PlayerPrefs.HasKey("EffectsVolume")){
+            EffectsSource.volume = PlayerPrefs.GetFloat("EffectsVolume") * effectsVolumeReduce;
+        }
+        if(PlayerPrefs.HasKey("EffectsMute")){
+            EffectsSource.mute = Convert.ToBoolean(PlayerPrefs.GetInt("EffectsMute"));
+        }
+
+        SoundDisabled = false;
     }
 
     public void StartMusicWithTheme(int theme){
@@ -110,9 +146,55 @@ public class SoundManager : MonoBehaviour {
         }
     }
 
-    public void StopAll(){
-        MusicSource.Stop();
-        AmbientSource.Stop();
-        EffectsSource.Stop();
+    public void SetVolume(AudioSourceComponant src, float value){
+        switch (src)
+        {
+            case AudioSourceComponant.Music:
+                MusicSource.volume = value * musicVolumeReduce;
+                PlayerPrefs.SetFloat("MusicVolume", value);
+                break;
+            case AudioSourceComponant.Ambient:
+                AmbientSource.volume = value * ambientVolumeReduce;
+                PlayerPrefs.SetFloat("AmbientVolume", value);
+                break;
+            case AudioSourceComponant.Effects:
+                EffectsSource.volume = value * effectsVolumeReduce;
+                PlayerPrefs.SetFloat("EffectsVolume", value);
+                break;
+            default:
+                throw new ArgumentException("Invalid audio source");
+        }
+    }
+
+    public void Mute(AudioSourceComponant src, bool value){
+        Debug.Log(value);
+        switch (src)
+        {
+            case AudioSourceComponant.Music:
+                MusicSource.mute = value;
+                PlayerPrefs.SetInt("MusicMute", value ? 1 : 0);
+                break;
+            case AudioSourceComponant.Ambient:
+                AmbientSource.mute = value;
+                PlayerPrefs.SetInt("AmbientMute", value ? 1 : 0);
+                break;
+            case AudioSourceComponant.Effects:
+                EffectsSource.mute = value;
+                PlayerPrefs.SetInt("EffectsMute", value ? 1 : 0);
+                break;
+            default:
+                throw new ArgumentException("Invalid audio source");
+        }
+    }
+
+    public void MuteAll(bool value){ 
+         if (value){
+             AudioListener.volume = 0f;
+             SoundDisabled = true;
+         }
+         else{
+             AudioListener.volume = 1f;
+             SoundDisabled = false;
+         }
     }
 }

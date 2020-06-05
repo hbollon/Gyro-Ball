@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public GameObject gui;
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
+    private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
     private GameObject[] finishObjects;
@@ -21,16 +22,16 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        gui.SetActive(true);
-
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
+        settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
 
         HidePaused();
         HideLevelSelector();
+        HideSettings();
         HideGameOver();
         HideFinished();
         ShowInGame();
@@ -224,6 +225,24 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //shows objects with SettingsUI tag
+    public void ShowSettings()
+    {
+        foreach (GameObject g in settingsObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with SettingsUI tag
+    public void HideSettings()
+    {
+        foreach (GameObject g in settingsObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
     //loads inputted level
     public void LoadLevel(int levelIndex)
     {
@@ -232,5 +251,45 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel(){
         LevelManager.Instance.NextLevel();
+    }
+
+    /************************/
+    /* Settings screen part */
+    /************************/
+
+    public void SetQuality(int preset) {
+        GameManager.Instance.SetQualitySetting(preset);
+    }
+
+    public void SetCameraMode(int mode) {
+        GameManager.Instance.SetCameraMode(mode);
+    }
+
+    public void MuteMusic(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Music, value);
+    }
+
+    public void MuteAmbient(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Ambient, value);
+    }
+
+    public void MuteEffects(bool value){
+        SoundManager.Instance.Mute(SoundManager.AudioSourceComponant.Effects, value);
+    }
+
+    public void MuteAll(bool value){
+        SoundManager.Instance.MuteAll(value);
+    }
+
+    public void SetMusicVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Music, value);
+    }
+
+    public void SetAmbientVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Ambient, value);
+    }
+
+    public void SetEffectsVolume(float value){
+        SoundManager.Instance.SetVolume(SoundManager.AudioSourceComponant.Effects, value);
     }
 }

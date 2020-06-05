@@ -12,6 +12,8 @@ TagManager:
   - OnFinishUI
   - GUI
   - LevelSelector
+  - SettingsUI
+  - DynamicCamera
   layers:
   - Default
   - TransparentFX
