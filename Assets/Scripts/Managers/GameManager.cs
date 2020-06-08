@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
                 quality = preset;
                 QualitySettings.SetQualityLevel(preset, true);
                 PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to " + quality);
+                Debug.Log("Quality settings set to " + preset);
                 break;
 
             default:
