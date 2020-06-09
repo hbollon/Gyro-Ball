@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -1415,12 +1415,12 @@ PrefabInstance:
     - target: {fileID: 1924929353061346174, guid: 17b33b5a6d5b208d0b1db7f58b5d3784,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9683466
+      value: 8.76
       objectReference: {fileID: 0}
     - target: {fileID: 1924929353061346174, guid: 17b33b5a6d5b208d0b1db7f58b5d3784,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.1907773
+      value: 7.75
       objectReference: {fileID: 0}
     - target: {fileID: 1924929353061346174, guid: 17b33b5a6d5b208d0b1db7f58b5d3784,
         type: 3}
@@ -1471,6 +1471,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2187261855487686982, guid: 9ecf7f860ce7903df9251a88ae480e12,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187261855487686982, guid: 9ecf7f860ce7903df9251a88ae480e12,
+        type: 3}
+      propertyPath: m_Shadows.m_Resolution
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2187261855487686983, guid: 9ecf7f860ce7903df9251a88ae480e12,
         type: 3}
       propertyPath: m_Name
@@ -1760,12 +1770,12 @@ PrefabInstance:
     - target: {fileID: 915538142034071973, guid: f536b014941e42eefabf96f553abc1b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9683466
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 915538142034071973, guid: f536b014941e42eefabf96f553abc1b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.1907773
+      value: -6.93
       objectReference: {fileID: 0}
     - target: {fileID: 915538142034071973, guid: f536b014941e42eefabf96f553abc1b1,
         type: 3}
@@ -2008,6 +2018,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2432090755550338912, guid: a93863c32772dd200bb3202c2b5e8d5f,
         type: 3}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9632996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8632076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675550, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675550, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8096151429007428142, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: ui

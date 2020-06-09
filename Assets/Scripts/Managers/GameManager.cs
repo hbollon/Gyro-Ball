@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
     private Camera staticCamera;
     private Camera dynamicCamera;
-    private Camera landscapeCamera;
+    private GameObject postProcessObj;
 
     private int quality;
     public int Quality {    
@@ -47,7 +47,13 @@ public class GameManager : MonoBehaviour {
     {
         staticCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         dynamicCamera = GameObject.Find("DynamicCamera").GetComponent<Camera>();
-        landscapeCamera = GameObject.Find("Landscape Camera").GetComponent<Camera>();
+        postProcessObj = GameObject.Find("PostProcessing");
+
+        if(PlayerPrefs.HasKey("PostProcess")){
+            if(PlayerPrefs.GetInt("Quality") == 0)
+                postProcessObj.SetActive(false);
+        }
+
         ApplyCameraMode();
     }
 
@@ -70,6 +76,10 @@ public class GameManager : MonoBehaviour {
                 QualitySettings.SetQualityLevel(preset, true);
                 PlayerPrefs.SetInt("Quality", preset);
                 Debug.Log("Quality settings set to " + preset);
+
+                postProcessObj.SetActive(false);
+                PlayerPrefs.SetInt("PostProcess", 0);
+                Debug.Log("Post-Processing disabled !");
                 break;
 
             case 1:
@@ -82,6 +92,9 @@ public class GameManager : MonoBehaviour {
                 PlayerPrefs.SetInt("Quality", preset);
                 Debug.Log("Quality settings set to " + preset);
 
+                postProcessObj.SetActive(true);
+                PlayerPrefs.SetInt("PostProcess", 1);
+                Debug.Log("Post-Processing enabled !");
                 break;
 
             default:
