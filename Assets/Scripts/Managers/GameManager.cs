@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Start() {
+        Application.targetFrameRate = 60;
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
@@ -59,8 +63,6 @@ public class GameManager : MonoBehaviour {
 
     private void InitSettings()
     {
-        Application.targetFrameRate = 60;
-
         if(PlayerPrefs.HasKey("Quality")){
             quality = PlayerPrefs.GetInt("Quality");
             QualitySettings.SetQualityLevel(quality, true);
