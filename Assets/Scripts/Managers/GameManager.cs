@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
 
     private void InitSettings()
     {
-        Application.targetFrameRate = 100;
+        Application.targetFrameRate = 60;
 
         if(PlayerPrefs.HasKey("Quality")){
             quality = PlayerPrefs.GetInt("Quality");
