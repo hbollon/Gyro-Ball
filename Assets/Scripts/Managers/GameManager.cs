@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Rendering.PostProcessing;
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
 
     private Camera staticCamera;
     private Camera dynamicCamera;
+    private GameObject postProcessObj;
 
     private int quality;
     public int Quality {    
@@ -32,6 +33,10 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Start() {
+        Application.targetFrameRate = 60;
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
@@ -46,6 +51,13 @@ public class GameManager : MonoBehaviour {
     {
         staticCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         dynamicCamera = GameObject.Find("DynamicCamera").GetComponent<Camera>();
+        postProcessObj = GameObject.Find("PostProcessing");
+
+        if(PlayerPrefs.HasKey("PostProcess")){
+            if(PlayerPrefs.GetInt("Quality") == 0)
+                postProcessObj.SetActive(false);
+        }
+
         ApplyCameraMode();
     }
 
@@ -64,6 +76,16 @@ public class GameManager : MonoBehaviour {
         switch(preset)
         {
             case 0:
+                quality = preset;
+                QualitySettings.SetQualityLevel(preset, true);
+                PlayerPrefs.SetInt("Quality", preset);
+                Debug.Log("Quality settings set to " + preset);
+
+                postProcessObj.SetActive(false);
+                PlayerPrefs.SetInt("PostProcess", 0);
+                Debug.Log("Post-Processing disabled !");
+                break;
+
             case 1:
             case 2:
             case 3:
@@ -72,13 +94,19 @@ public class GameManager : MonoBehaviour {
                 quality = preset;
                 QualitySettings.SetQualityLevel(preset, true);
                 PlayerPrefs.SetInt("Quality", preset);
-                Debug.Log("Quality settings set to " + quality);
+                Debug.Log("Quality settings set to " + preset);
+
+                postProcessObj.SetActive(true);
+                PlayerPrefs.SetInt("PostProcess", 1);
+                Debug.Log("Post-Processing enabled !");
                 break;
 
             default:
                 throw new ArgumentException("Invalid quality preset");
             }
     }
+
+
 
     public void SetCameraMode(int mode){
         if(mode == 0 || mode == 1){
