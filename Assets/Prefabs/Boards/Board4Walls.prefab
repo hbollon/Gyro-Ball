@@ -54,15 +54,15 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 1
+  far clip plane: 5
   field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 33
+    m_Bits: 1057
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1872847301167427435}
   - component: {fileID: 8096151429036395909}
   - component: {fileID: 1872847301167427428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Board4Walls
   m_TagString: Board
   m_Icon: {fileID: 0}
@@ -294,12 +294,12 @@ PrefabInstance:
     - target: {fileID: 1128829951674220177, guid: f6df497791ad5835a912c1aa54839efa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.059999
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 1128829951674220177, guid: f6df497791ad5835a912c1aa54839efa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.05000019
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1128829951674220177, guid: f6df497791ad5835a912c1aa54839efa,
         type: 3}
@@ -339,51 +339,6 @@ PrefabInstance:
     - target: {fileID: 1128829951674220177, guid: f6df497791ad5835a912c1aa54839efa,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_SpotAngle
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_BounceIntensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_DrawHalo
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_Range
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_InnerSpotAngle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128829951674220178, guid: f6df497791ad5835a912c1aa54839efa,
-        type: 3}
-      propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1128829951674220179, guid: f6df497791ad5835a912c1aa54839efa,
