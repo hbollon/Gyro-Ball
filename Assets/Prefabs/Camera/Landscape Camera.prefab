@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landscape
       objectReference: {fileID: 0}
+    - target: {fileID: 5995124346519901206, guid: 45778ddfe9a66925f917f761a239e3db,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45778ddfe9a66925f917f761a239e3db, type: 3}
 --- !u!4 &3739450638574172812 stripped
