@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
     private float magnitude = -9.81f;
+    private Rigidbody ballRigidbody;
+
+    private void Start() {
+        ballRigidbody = GetComponent<Rigidbody>();
+    }
 
     public Vector3 GravityForce
     {
@@ -18,7 +23,7 @@ public class Gravity : MonoBehaviour {
         }
     }
 
-    void FixedUpdate () {
-        GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, magnitude, 0.0f), ForceMode.Acceleration);
+    void FixedUpdate() {
+        ballRigidbody.AddForce(new Vector3(0.0f, magnitude, 0.0f), ForceMode.Acceleration);
     }
 }

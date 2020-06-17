@@ -9,15 +9,18 @@ public class Toggle : MonoBehaviour {
     private bool toggle;
     private Color toggledColor;
     private int baseValue;
+    private Image image;
 
     private void Awake() {
         toggledColor = new Color(0.75f, 0.75f, 0.75f, 1f);
     }
 
     private void Start() {
+        image = GetComponent<Image>();
+
         UpdateBaseValue();
         if(baseValue == preset){
-            GetComponent<Image>().color = toggledColor;
+            image.color = toggledColor;
             toggle = true;
         } else toggle = false;
     }
@@ -25,11 +28,11 @@ public class Toggle : MonoBehaviour {
     private void Update() {
         UpdateBaseValue();
         if(baseValue == preset && !toggle){
-            GetComponent<Image>().color = toggledColor;
+            image.color = toggledColor;
             toggle = true;
         }
         else if(baseValue != preset && toggle){
-            GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            image.color = new Color(1f, 1f, 1f, 1f);
             toggle = false;
         }
     }

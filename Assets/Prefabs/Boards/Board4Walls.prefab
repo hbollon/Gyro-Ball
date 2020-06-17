@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1872847301167427430}
   - component: {fileID: 1872847301167427435}
   - component: {fileID: 8096151429036395909}
-  - component: {fileID: 1872847301167427428}
+  - component: {fileID: 1112243757800323564}
   m_Layer: 10
   m_Name: Board4Walls
   m_TagString: Board
@@ -187,9 +187,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 3
---- !u!114 &1872847301167427428
+  m_Constraints: 32
+  m_CollisionDetection: 0
+--- !u!114 &1112243757800323564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,11 +198,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872847301167427429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0aa6392f9777d694992c73521a7328d, type: 3}
+  m_Script: {fileID: 11500000, guid: 94691cec383a983ffa8e0067f3449ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: 0.1
+  smoothing: 0.2
   speed: 20
+  debug: 0
 --- !u!1 &8096151429007428143
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!114 &8096151429007428142
 MonoBehaviour:
   m_ObjectHideFlags: 0

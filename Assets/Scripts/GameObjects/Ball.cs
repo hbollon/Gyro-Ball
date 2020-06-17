@@ -39,9 +39,9 @@ public class Ball : MonoBehaviour {
     }
 
     public void Finish() {
-        GetComponent<Rigidbody>().useGravity = false;
-        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-        GetComponent<Rigidbody>().isKinematic = true;
+        m_Rigidbody.useGravity = false;
+        m_Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        m_Rigidbody.isKinematic = true;
             
         Vector3 endPosition = Vector3.zero;
         endPosition.y += 0.4f;
