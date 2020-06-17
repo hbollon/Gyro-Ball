@@ -1890,6 +1890,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: smoothing
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1872847301167427429, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_Name
@@ -1977,15 +1992,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2432090755550338912, guid: a93863c32772dd200bb3202c2b5e8d5f,
         type: 3}
-    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8096151429007428142, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: ui
       value: 
       objectReference: {fileID: 1257249518}
+    - target: {fileID: 8096151429036395909, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071535054d60315d09d3b9274d6a2de7, type: 3}
