@@ -1890,21 +1890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: debug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: smoothing
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112243757800323564, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1872847301167427429, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_Name
@@ -1997,10 +1982,5 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1257249518}
-    - target: {fileID: 8096151429036395909, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 32
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071535054d60315d09d3b9274d6a2de7, type: 3}
