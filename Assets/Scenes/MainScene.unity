@@ -1801,42 +1801,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: currentLevel.unlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.data[0].levelChapter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.data[6].levelNumber
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.data[6].levelChapter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.data[6].levelScene.sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: 1628ab1d9c0f68a6b9367e2745f4490a,
-        type: 3}
-    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: levels.Array.data[6].levelScene.scenePath
-      value: Assets/Scenes/Levels/Level6.unity
-      objectReference: {fileID: 0}
     - target: {fileID: 7295590403229748145, guid: f6f46e4b285a73d788a1127b6ac39f6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1896,11 +1860,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7295590403229748147, guid: f6f46e4b285a73d788a1127b6ac39f6d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f46e4b285a73d788a1127b6ac39f6d, type: 3}
