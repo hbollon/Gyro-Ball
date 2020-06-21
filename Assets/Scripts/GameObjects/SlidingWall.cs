@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class SlidingWall : MonoBehaviour {
-    public float speed = 1f;
+    public float distancePerSeconds = 1f;
     public float distance = 1f;
     public bool invertSliding = false;
     public bool debug = false;
@@ -17,7 +17,7 @@ public class SlidingWall : MonoBehaviour {
             if(!invertSliding){
                 transform.localPosition = new Vector3(transform.localPosition.x,
                                                 transform.localPosition.y, 
-                                                transform.localPosition.z + speed);
+                                                transform.localPosition.z + distancePerSeconds * Time.deltaTime);
 
                 if(transform.localPosition.z >= (initialPosition.z + distance)){
                     invertSliding = !invertSliding;
@@ -29,7 +29,7 @@ public class SlidingWall : MonoBehaviour {
             else{
                 transform.localPosition = new Vector3(transform.localPosition.x,
                                                 transform.localPosition.y, 
-                                                transform.localPosition.z - speed);
+                                                transform.localPosition.z - distancePerSeconds * Time.deltaTime);
                                                 
                 if(transform.localPosition.z <= (initialPosition.z - distance)){
                     invertSliding = !invertSliding;
@@ -39,7 +39,7 @@ public class SlidingWall : MonoBehaviour {
                 }
             }
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 
