@@ -9,34 +9,34 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 79ca6bc3781432c5d97e67a7f7b19650
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
+    path: Assets/Scenes/Levels/Forest/Level1.unity
     guid: d72d2bb4a12d557dc971a00a41678636
   - enabled: 1
-    path: Assets/Scenes/Levels/Level2.unity
+    path: Assets/Scenes/Levels/Forest/Level2.unity
     guid: 28377a6cb286e2320bf1b1a2da631857
   - enabled: 1
-    path: Assets/Scenes/Levels/Level3.unity
+    path: Assets/Scenes/Levels/Forest/Level3.unity
     guid: d15d640138d5a01f5aa1d47753600aab
   - enabled: 1
-    path: Assets/Scenes/Levels/Level4.unity
+    path: Assets/Scenes/Levels/Forest/Level4.unity
     guid: ba6412abbc9f7c63185f3e6146d93301
   - enabled: 1
-    path: Assets/Scenes/Levels/Level5.unity
+    path: Assets/Scenes/Levels/Forest/Level5.unity
     guid: 1d9e5e0f1494d18b4a5b7eac94f1783d
   - enabled: 1
-    path: Assets/Scenes/Levels/Level6.unity
+    path: Assets/Scenes/Levels/Forest/Level6.unity
     guid: 1628ab1d9c0f68a6b9367e2745f4490a
   - enabled: 1
-    path: Assets/Scenes/Levels/Level7.unity
+    path: Assets/Scenes/Levels/Forest/Level7.unity
     guid: 3e951b7d968f66789a6b14d7c1900efb
   - enabled: 1
-    path: Assets/Scenes/Levels/Level8.unity
+    path: Assets/Scenes/Levels/Forest/Level8.unity
     guid: d0fadd8df650bddbe975ab0943d13229
   - enabled: 1
-    path: Assets/Scenes/Levels/Level9.unity
+    path: Assets/Scenes/Levels/Forest/Level9.unity
     guid: 1187ebb98ffd587dd886df9fd88c96d0
   - enabled: 1
-    path: Assets/Scenes/Levels/Level10.unity
+    path: Assets/Scenes/Levels/Forest/Level10.unity
     guid: ab6da702e63ccc2e29aed74257ca24b7
   - enabled: 1
     path: Assets/Scenes/Levels/NightForest/Level11.unity
