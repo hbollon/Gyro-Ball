@@ -98,6 +98,24 @@ MonoBehaviour:
       sceneAsset: {fileID: 102900000, guid: d0fadd8df650bddbe975ab0943d13229, type: 3}
       scenePath: Assets/Scenes/Levels/Level8.unity
     unlocked: 0
+  - levelNumber: 9
+    levelChapter: 1
+    levelScene:
+      sceneAsset: {fileID: 102900000, guid: 1187ebb98ffd587dd886df9fd88c96d0, type: 3}
+      scenePath: Assets/Scenes/Levels/Level9.unity
+    unlocked: 0
+  - levelNumber: 10
+    levelChapter: 1
+    levelScene:
+      sceneAsset: {fileID: 102900000, guid: ab6da702e63ccc2e29aed74257ca24b7, type: 3}
+      scenePath: Assets/Scenes/Levels/Level10.unity
+    unlocked: 0
+  - levelNumber: 11
+    levelChapter: 1
+    levelScene:
+      sceneAsset: {fileID: 102900000, guid: f8b09bb8348a40aabbdd9991760ba1f2, type: 3}
+      scenePath: Assets/Scenes/Levels/NightForest/Level11.unity
+    unlocked: 0
   currentLevel:
     levelNumber: 0
     levelChapter: 0

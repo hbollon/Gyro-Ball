@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level9.unity
     guid: 1187ebb98ffd587dd886df9fd88c96d0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level10.unity
+    guid: ab6da702e63ccc2e29aed74257ca24b7
+  - enabled: 1
+    path: Assets/Scenes/Levels/NightForest/Level11.unity
+    guid: f8b09bb8348a40aabbdd9991760ba1f2
   m_configObjects: {}
