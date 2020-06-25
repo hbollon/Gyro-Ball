@@ -25,6 +25,11 @@ PrefabInstance:
       propertyPath: distancePerSeconds
       value: 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7583875443157185091, guid: ab1c917de1dbe8af6b29978ba0cf17a1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7244b8e5309f7e658bfe96989b5b251, type: 2}
     - target: {fileID: 7583875443157185102, guid: ab1c917de1dbe8af6b29978ba0cf17a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -126,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 1872847301167427429, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_Name
-      value: Board
+      value: Board Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1872847301167427430, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
@@ -137,7 +142,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7a75a274eb319ebedaaab65bf259f9b4, type: 2}
+      objectReference: {fileID: 2100000, guid: b7244b8e5309f7e658bfe96989b5b251, type: 2}
     - target: {fileID: 1872847301167427432, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -290,6 +295,11 @@ PrefabInstance:
       propertyPath: invertSliding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7583875443157185091, guid: ab1c917de1dbe8af6b29978ba0cf17a1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7244b8e5309f7e658bfe96989b5b251, type: 2}
     - target: {fileID: 7583875443157185102, guid: ab1c917de1dbe8af6b29978ba0cf17a1,
         type: 3}
       propertyPath: m_LocalPosition.x
