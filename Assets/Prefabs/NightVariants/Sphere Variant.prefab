@@ -44,7 +44,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.5
-  m_Range: 0.5
+  m_Range: 0.4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 3881710178651799051, guid: 42a87cd4da2f404e886040e8dd05789f,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Sphere Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3881710178651799051, guid: 42a87cd4da2f404e886040e8dd05789f,
         type: 3}
