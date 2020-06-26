@@ -169,36 +169,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 18.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477657652752569789, guid: 8d83ed059a3f244679b4b23bb11895b7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.005
-      objectReference: {fileID: 0}
     - target: {fileID: 5320799424918138382, guid: 8d83ed059a3f244679b4b23bb11895b7,
         type: 3}
       propertyPath: m_Name
@@ -300,25 +270,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1c917de1dbe8af6b29978ba0cf17a1, type: 3}
---- !u!1 &803731384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5320799424918138382, guid: 8d83ed059a3f244679b4b23bb11895b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 163231691}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &803731386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803731384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f2c0a918368df64a5386bcf14ad413, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 4
 --- !u!1001 &856217585
 PrefabInstance:
   m_ObjectHideFlags: 0
