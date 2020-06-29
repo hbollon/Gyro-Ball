@@ -241,6 +241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoardBridge
       objectReference: {fileID: 0}
+    - target: {fileID: 8911756019154482513, guid: c7bb1522d75e1aa27846c62a2adbba36,
+        type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 865423642}
     - target: {fileID: 8911756019154482525, guid: c7bb1522d75e1aa27846c62a2adbba36,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1802,6 +1807,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5d18047979b51cfab97c5cdfbce345, type: 3}
+--- !u!1 &865423642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1331312130883228189, guid: 9a5d18047979b51cfab97c5cdfbce345,
+    type: 3}
+  m_PrefabInstance: {fileID: 865423641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1459442028
 PrefabInstance:
   m_ObjectHideFlags: 0
