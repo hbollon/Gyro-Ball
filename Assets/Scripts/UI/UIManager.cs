@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject gui;
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
-    private GameObject[] levelSelectorPanels;
+    private List<GameObject> levelSelectorPanels;
     private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -25,11 +26,14 @@ public class UIManager : MonoBehaviour
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
-        levelSelectorPanels = GameObject.FindGameObjectsWithTag("Levels panels"); //gets all objects with tag LevelSelector
         settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
         inGameObjects = GameObject.FindGameObjectsWithTag("InGameUI");          //gets all objects with tag InGameUI
+
+        levelSelectorPanels = new List<GameObject>();
+        levelSelectorPanels.Add(GameObject.Find("PanelContent1"));
+        levelSelectorPanels.Add(GameObject.Find("PanelContent2"));
 
         HidePaused();
         HideLevelSelector();

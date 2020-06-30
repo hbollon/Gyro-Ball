@@ -3155,6 +3155,96 @@ PrefabInstance:
       propertyPath: levels.Array.data[19].levelScene.scenePath
       value: Assets/Scenes/Levels/NightForest/Night9.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[2].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[4].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[5].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[7].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[6].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[12].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[13].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[16].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[17].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[18].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[19].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[8].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[9].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[10].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[11].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[15].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[14].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295590403229748144, guid: f6f46e4b285a73d788a1127b6ac39f6d,
+        type: 3}
+      propertyPath: levels.Array.data[3].unlocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7295590403229748145, guid: f6f46e4b285a73d788a1127b6ac39f6d,
         type: 3}
       propertyPath: m_LocalPosition.x
