@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public GameObject gui;
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
+    private GameObject[] levelSelectorPanels;
     private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
+        levelSelectorPanels = GameObject.FindGameObjectsWithTag("Levels panels"); //gets all objects with tag LevelSelector
         settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
@@ -213,6 +215,24 @@ public class UIManager : MonoBehaviour
         foreach (GameObject g in levelSelectorObjects)
         {
             g.SetActive(true);
+        }
+        ChangeLevelPage(1);
+    }
+
+    public void ChangeLevelPage(int page){
+        foreach(GameObject panel in levelSelectorPanels){
+            panel.SetActive(false);
+        }
+        if(levelSelectorObjects[0].activeSelf){
+            switch(page){
+                case 1: 
+                case 2: 
+                    levelSelectorPanels[page-1].SetActive(true);
+                    break;
+
+                default: 
+                    break;
+            }
         }
     }
 
