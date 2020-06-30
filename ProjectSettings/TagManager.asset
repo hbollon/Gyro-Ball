@@ -14,6 +14,7 @@ TagManager:
   - LevelSelector
   - SettingsUI
   - DynamicCamera
+  - Levels panels
   layers:
   - Default
   - TransparentFX
