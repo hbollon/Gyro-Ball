@@ -6,7 +6,8 @@ using UnityEngine;
 */
 
 public class Gravity : MonoBehaviour {
-    private float magnitude = -9.81f;
+    public float magnitude = -9.81f;
+
     private Rigidbody ballRigidbody;
 
     private void Start() {
