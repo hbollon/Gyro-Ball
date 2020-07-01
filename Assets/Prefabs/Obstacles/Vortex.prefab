@@ -4767,7 +4767,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1404dc9ca6c3c941add6f8dbf4a65f7, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14334,6 +14334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323410607080065722}
   - component: {fileID: 4067442747737132086}
+  - component: {fileID: 766246749}
   m_Layer: 0
   m_Name: Attaction
   m_TagString: Untagged
@@ -14365,10 +14366,23 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 6
+  m_Radius: 10
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &766246749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323410607080065721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236babab9169d478b5bd8d2ddd209a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 0.2
 --- !u!1 &1323410607228545618
 GameObject:
   m_ObjectHideFlags: 0
