@@ -4,11 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance { get; private set; }
+    public int NbBallsAtEnd { get; set; }
+    private bool levelFinished;
+    private bool gameOver;
+    private List<Ball> balls;
+    private UIManager uiInstance;
 
     [System.Serializable] public class Level {
         public int levelNumber;
         public int levelChapter;
         public SceneReference levelScene;
+        public int nbBalls;
         private int levelIndex;
         public bool unlocked;
 
@@ -34,6 +40,53 @@ public class LevelManager : MonoBehaviour {
     private void Update() {
         if(Input.GetKeyDown(KeyCode.R))
             ResetProgression();
+
+        if(Input.GetKeyDown(KeyCode.F))
+            NbBallsAtEnd = currentLevel.nbBalls;
+
+        if(NbBallsAtEnd == currentLevel.nbBalls && !levelFinished){
+            levelFinished = true;
+            UnlockNextLevel();
+            uiInstance.HideInGame();
+            uiInstance.ShowFinished();
+        }
+
+        foreach (Ball ball in balls){
+            if(ball != null && (ball.GetComponent<Ball>().GetFalled() || Input.GetKeyDown(KeyCode.G)) && !gameOver){
+                gameOver = true;
+                uiInstance.HideInGame();
+                uiInstance.ShowGameOver();
+                ball.gameObject.SetActive(false);
+                break;
+            }
+        }
+        
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        NbBallsAtEnd = 0;
+        levelFinished = false;
+        gameOver = false;
+        if(GameObject.Find("UIManager").GetComponent<UIManager>() != null)
+            uiInstance = GameObject.Find("UIManager").GetComponent<UIManager>();
+        if (GameObject.FindWithTag("Ball")){
+            GameObject[] ballsObjects = GameObject.FindGameObjectsWithTag("Ball");
+            balls = new List<Ball>();
+            foreach (GameObject ball in ballsObjects){
+                balls.Add(ball.GetComponent<Ball>());
+            }
+        }
     }
 
     private void Awake() {
