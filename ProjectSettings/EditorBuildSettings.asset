@@ -51,6 +51,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Forest/Level14.unity
     guid: ca35063af477e0f8ba40788e31eaaf78
   - enabled: 1
+    path: Assets/Scenes/Levels/Forest/Level15.unity
+    guid: 7eb881b1cdd83dede95fb450cba007f9
+  - enabled: 1
+    path: Assets/Scenes/Levels/Forest/Level16.unity
+    guid: 79ca833b7e9f35f709bc8c0c7a47c82d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Forest/Level17.unity
+    guid: 22e226be351c93974ae881ebdb706a31
+  - enabled: 1
+    path: Assets/Scenes/Levels/Forest/Level18.unity
+    guid: 3e376751c3eb8f4a4a47c9daacd02888
+  - enabled: 1
     path: Assets/Scenes/Levels/NightForest/Night1.unity
     guid: b88dfdbe58f462194b2d9e492a3355f5
   - enabled: 1
