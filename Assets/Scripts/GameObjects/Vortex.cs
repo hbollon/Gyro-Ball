@@ -8,7 +8,7 @@ public class Vortex : MonoBehaviour {
             Vector3 offset = transform.position - other.gameObject.transform.position;
             float magsqr = offset.sqrMagnitude;
             
-            if(magsqr > 0.01f)
+            if(magsqr > 0.005f)
                 other.gameObject.GetComponent<Rigidbody>().AddForce(velocity * offset.normalized / magsqr, ForceMode.Acceleration);
             else{
                 if(other.gameObject.tag.Equals("Ball")) {
