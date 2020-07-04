@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: f070e21e53b1112b3ad3feeb2a3d6be1,
+  m_LightingDataAsset: {fileID: 112000016, guid: 295d612915ac508cba3b875f3c772a6d,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2697,6 +2697,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2432090755550338912, guid: 4a7a4efef61a50d3cae0012e0a24e82c,
         type: 3}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: -5.2023164e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.0514303e-37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -37499904
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834960909713675549, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 6.462546e-27
+      objectReference: {fileID: 0}
     - target: {fileID: 7834960909713675550, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_LocalPosition.x
