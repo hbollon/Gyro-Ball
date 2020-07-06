@@ -113,6 +113,7 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadLevel(int index) {
         if (index < levels.Count && index >= 0 && levels[index].unlocked) {
+            AdsManager.Instance.ConsecutivesLevels++;
             currentLevel = levels[index];
             SceneManager.LoadScene(currentLevel.LevelIndex);
             SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
@@ -121,6 +122,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void NextLevel() {
+        AdsManager.Instance.ConsecutivesLevels++;
         currentLevel = levels[currentLevel.LevelIndex + 1];
         SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
         SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);

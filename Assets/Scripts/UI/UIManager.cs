@@ -71,6 +71,7 @@ public class UIManager : MonoBehaviour
     //Reloads the Level
     public void Reload()
     {
+        AdsManager.Instance.ConsecutivesLevels++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
