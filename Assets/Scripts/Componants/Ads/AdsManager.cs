@@ -70,8 +70,12 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener {
         Advertisement.Initialize(gameId, testMode);
     }
 
-    public void PlayAd(string placementId){
+    private void PlayAd(string placementId){
         Advertisement.Show(placementId);
+    }
+
+    public void PlayRewardedAd(){
+        PlayAd(rewardedPlacementId);
     } 
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult) {

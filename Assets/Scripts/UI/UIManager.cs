@@ -75,6 +75,10 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void SkipLevel(){
+        AdsManager.Instance.PlayRewardedAd();
+    }
+
     //controls the pausing of the scene
     public void PauseControl()
     {
