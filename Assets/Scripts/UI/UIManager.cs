@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     private GameObject[] pauseObjects;
     private GameObject[] levelSelectorObjects;
     private List<GameObject> levelSelectorPanels;
+    private GameObject[] skipObjects;
     private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -26,6 +27,7 @@ public class UIManager : MonoBehaviour
 
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
+        skipObjects = GameObject.FindGameObjectsWithTag("SkipConfirmationUI"); //gets all objects with tag SkipConfirmationUI
         settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
@@ -40,6 +42,7 @@ public class UIManager : MonoBehaviour
         HideSettings();
         HideGameOver();
         HideFinished();
+        HideSkipLevel();
         ShowInGame();
 
         if (GameObject.FindWithTag("Ball"))
@@ -77,6 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void SkipLevel(){
         AdsManager.Instance.PlayRewardedAd();
+        HideSkipLevel();
     }
 
     //controls the pausing of the scene
@@ -93,6 +97,20 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
             HidePaused();
             ShowInGame();
+        }
+    }
+
+    public void SkipUI()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            ShowSkipLevel();
+        }
+        else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            HideSkipLevel();
         }
     }
 
@@ -170,6 +188,24 @@ public class UIManager : MonoBehaviour
     public void HideInGame()
     {
         foreach (GameObject g in inGameObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with SkipConfirmationUI tag
+    public void ShowSkipLevel()
+    {
+        foreach (GameObject g in skipObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with SkipConfirmationUI tag
+    public void HideSkipLevel()
+    {
+        foreach (GameObject g in skipObjects)
         {
             g.SetActive(false);
         }
