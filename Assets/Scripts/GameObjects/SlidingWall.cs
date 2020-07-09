@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using System.Collections;
 
@@ -8,6 +9,7 @@ public class SlidingWall : MonoBehaviour {
     public bool applyForceOnX = false;
     public bool applyForceOnY = false;
     public bool applyForceOnZ = false;
+    public bool moveBallWithPlatform = false;
     public bool debug = false;
 
     private void Start() {
@@ -54,6 +56,18 @@ public class SlidingWall : MonoBehaviour {
             }
 
             yield return new WaitForFixedUpdate();
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(moveBallWithPlatform && other.gameObject.tag.Equals("Ball")){
+            other.gameObject.transform.parent = gameObject.transform;
+        }
+    }
+
+    private void OnCollisionExit(Collision other) {
+        if(moveBallWithPlatform && other.gameObject.tag.Equals("Ball")){
+            other.gameObject.transform.parent = null;
         }
     }
 
