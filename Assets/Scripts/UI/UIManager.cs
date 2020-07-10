@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         levelSelectorPanels = new List<GameObject>();
         levelSelectorPanels.Add(GameObject.Find("PanelContent1"));
         levelSelectorPanels.Add(GameObject.Find("PanelContent2"));
+        levelSelectorPanels.Add(GameObject.Find("PanelContent3"));
 
         HidePaused();
         HideLevelSelector();
@@ -271,7 +272,8 @@ public class UIManager : MonoBehaviour
         if(levelSelectorObjects[0].activeSelf){
             switch(page){
                 case 1: 
-                case 2: 
+                case 2:
+                case 3:
                     levelSelectorPanels[page-1].SetActive(true);
                     break;
 

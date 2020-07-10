@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
     private List<Ball> balls;
     private UIManager uiInstance;
 
+    [SerializeField] private bool unlockAll = false;
+
     [System.Serializable] public class Level {
         public int levelNumber;
         public int levelChapter;
@@ -105,7 +107,7 @@ public class LevelManager : MonoBehaviour {
         int progression = LoadProgression();
         print("Levels unlocked : " + progression);
         for(int i = 0; i<levels.Count; i++) {
-            if(progression >= i)
+            if(progression >= i || unlockAll)
                 levels[i].unlocked = true;
             levels[i].LevelIndex = i;
         }
