@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.oddworm.copylightingsettings": "https://github.com/pschraut/UnityCopyLightingSettings.git#1.3.0",
     "com.unity.ads": "3.4.7",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
