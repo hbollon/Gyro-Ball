@@ -36,7 +36,8 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        LoadLevel(0);
+        Debug.Log(getMaxUnlockedLevel());
+        LoadLevel(getMaxUnlockedLevel());
     }
 
     private void Update() {
@@ -111,6 +112,16 @@ public class LevelManager : MonoBehaviour {
                 levels[i].unlocked = true;
             levels[i].LevelIndex = i;
         }
+    }
+
+    private int getMaxUnlockedLevel() {
+        int index = 1;
+        do {
+            if(!levels[index].unlocked)
+                return index-1;
+        } while (++index < levels.Count);
+
+        return index-1;
     }
 
     public void LoadLevel(int index) {
