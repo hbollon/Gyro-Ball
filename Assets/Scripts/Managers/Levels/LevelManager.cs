@@ -36,8 +36,11 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        Debug.Log(getMaxUnlockedLevel());
-        LoadLevel(getMaxUnlockedLevel());
+        if (Debug.isDebugBuild)
+            LoadLevel(0);
+        else
+            LoadLevel(getMaxUnlockedLevel());
+
     }
 
     private void Update() {
