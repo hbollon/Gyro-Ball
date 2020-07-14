@@ -2330,7 +2330,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Board
       value: 
-      objectReference: {fileID: 1426335542}
+      objectReference: {fileID: 1018994723821685771}
     - target: {fileID: 6196377848356184795, guid: 9a5d18047979b51cfab97c5cdfbce345,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3584,6 +3584,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6347225097939072067, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: multipleBallsSupport
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6470175257512589064, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_Mesh
@@ -3677,6 +3682,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17b7903def8f7e9b80f69737fc33f7e, type: 3}
+--- !u!1 &1018994723821685771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2180226681321935364, guid: e17b7903def8f7e9b80f69737fc33f7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018994723821685770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8956793960420777377
 PrefabInstance:
   m_ObjectHideFlags: 0
