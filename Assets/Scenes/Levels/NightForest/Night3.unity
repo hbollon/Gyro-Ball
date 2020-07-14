@@ -2871,7 +2871,12 @@ PrefabInstance:
     - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
         type: 3}
       propertyPath: velocity
-      value: 4
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
+        type: 3}
+      propertyPath: applyBoostOnZ
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdb3cb63be617240b46dcff22fb5e55, type: 3}

@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vortex (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4067442747737132086, guid: f3169d74db990dc7ab983fdbf300fb67,
+        type: 3}
+      propertyPath: m_Radius
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3169d74db990dc7ab983fdbf300fb67, type: 3}
 --- !u!1 &335367012
@@ -537,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vortex
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067442747737132086, guid: f3169d74db990dc7ab983fdbf300fb67,
+        type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3169d74db990dc7ab983fdbf300fb67, type: 3}
@@ -3979,6 +3989,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vortex (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4067442747737132086, guid: f3169d74db990dc7ab983fdbf300fb67,
+        type: 3}
+      propertyPath: m_Radius
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3169d74db990dc7ab983fdbf300fb67, type: 3}
 --- !u!1001 &1821163101
@@ -4051,6 +4066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vortex (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067442747737132086, guid: f3169d74db990dc7ab983fdbf300fb67,
+        type: 3}
+      propertyPath: m_Radius
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3169d74db990dc7ab983fdbf300fb67, type: 3}

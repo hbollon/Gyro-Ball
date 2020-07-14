@@ -8,6 +8,7 @@ public class Boost : MonoBehaviour
 {
 
     public float velocity = 4f;
+    public bool applyBoostOnZ = false;
     public bool addJump = false;
 
     [HideInInspector]
@@ -21,12 +22,12 @@ public class Boost : MonoBehaviour
         if (other.gameObject.tag == "Ball"){
             if(!differentJumpVelocity)
                 other.gameObject.GetComponent<Rigidbody>().AddForce(
-                    new Vector3(velocity, velocity * (addJump ? 1 : 0), 0f),
+                    new Vector3(velocity * (applyBoostOnZ ? 0 : 1), velocity * (addJump ? 1 : 0), velocity * (applyBoostOnZ ? 1 : 0)),
                     ForceMode.Impulse
                 );
             else
                 other.gameObject.GetComponent<Rigidbody>().AddForce(
-                    new Vector3(velocity, jumpVelocity, 0f),
+                    new Vector3(velocity * (applyBoostOnZ ? 0 : 1), jumpVelocity, velocity * (applyBoostOnZ ? 1 : 0)),
                     ForceMode.Impulse
                 );
 
