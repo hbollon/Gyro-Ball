@@ -44,29 +44,30 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.R))
-            ResetProgression();
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            if(Input.GetKeyDown(KeyCode.R))
+                ResetProgression();
 
-        if(Input.GetKeyDown(KeyCode.F))
-            NbBallsAtEnd = currentLevel.nbBalls;
+            if(Input.GetKeyDown(KeyCode.F))
+                NbBallsAtEnd = currentLevel.nbBalls;
 
-        if(NbBallsAtEnd == currentLevel.nbBalls && !levelFinished){
-            levelFinished = true;
-            UnlockNextLevel();
-            uiInstance.HideInGame();
-            uiInstance.ShowFinished();
-        }
-
-        foreach (Ball ball in balls){
-            if(ball != null && (ball.GetComponent<Ball>().GetFalled() || Input.GetKeyDown(KeyCode.G)) && !gameOver){
-                gameOver = true;
+            if(NbBallsAtEnd == currentLevel.nbBalls && !levelFinished){
+                levelFinished = true;
+                UnlockNextLevel();
                 uiInstance.HideInGame();
-                uiInstance.ShowGameOver();
-                ball.gameObject.SetActive(false);
-                break;
+                uiInstance.ShowFinished();
+            }
+
+            foreach (Ball ball in balls){
+                if(ball != null && (ball.GetComponent<Ball>().GetFalled() || Input.GetKeyDown(KeyCode.G)) && !gameOver){
+                    gameOver = true;
+                    uiInstance.HideInGame();
+                    uiInstance.ShowGameOver();
+                    ball.gameObject.SetActive(false);
+                    break;
+                }
             }
         }
-        
     }
 
     private void OnEnable()
@@ -80,17 +81,19 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
-    {
-        NbBallsAtEnd = 0;
-        levelFinished = false;
-        gameOver = false;
-        if(GameObject.Find("UIManager").GetComponent<UIManager>() != null)
-            uiInstance = GameObject.Find("UIManager").GetComponent<UIManager>();
-        if (GameObject.FindWithTag("Ball")){
-            GameObject[] ballsObjects = GameObject.FindGameObjectsWithTag("Ball");
-            balls = new List<Ball>();
-            foreach (GameObject ball in ballsObjects){
-                balls.Add(ball.GetComponent<Ball>());
+    {   
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            NbBallsAtEnd = 0;
+            levelFinished = false;
+            gameOver = false;
+            if(GameObject.Find("UIManager").GetComponent<UIManager>() != null)
+                uiInstance = GameObject.Find("UIManager").GetComponent<UIManager>();
+            if (GameObject.FindWithTag("Ball")){
+                GameObject[] ballsObjects = GameObject.FindGameObjectsWithTag("Ball");
+                balls = new List<Ball>();
+                foreach (GameObject ball in ballsObjects){
+                    balls.Add(ball.GetComponent<Ball>());
+                }
             }
         }
     }
