@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
+        type: 3}
+      propertyPath: applyBoostOnZ
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdb3cb63be617240b46dcff22fb5e55, type: 3}
 --- !u!1 &803381027
@@ -3037,6 +3042,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.20000003
       objectReference: {fileID: 0}
+    - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
+        type: 3}
+      propertyPath: velocity
+      value: -8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdb3cb63be617240b46dcff22fb5e55, type: 3}
 --- !u!1001 &1688852508
@@ -3194,6 +3204,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
+        type: 3}
+      propertyPath: applyBoostOnZ
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607474356426123617, guid: 3cdb3cb63be617240b46dcff22fb5e55,
+        type: 3}
+      propertyPath: velocity
+      value: -8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdb3cb63be617240b46dcff22fb5e55, type: 3}

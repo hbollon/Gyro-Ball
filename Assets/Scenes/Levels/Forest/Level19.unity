@@ -3310,6 +3310,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2432090755550338912, guid: 4cc32fa278344ec2a83d9e042f69492c,
         type: 3}
+    - target: {fileID: 4345848940023916452, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_IsContraintActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6336173597377731639, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_Mesh
@@ -3381,6 +3386,21 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 865423642}
+    - target: {fileID: 8763962191132080358, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763962191132080358, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763962191132080358, guid: 071535054d60315d09d3b9274d6a2de7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.581
+      objectReference: {fileID: 0}
     - target: {fileID: 9059383133626520879, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_Materials.Array.size

@@ -209,12 +209,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1124961313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1872847301167427429, guid: 071535054d60315d09d3b9274d6a2de7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8096151428962632841}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &1171836183 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 2187261855487686982, guid: 9ecf7f860ce7903df9251a88ae480e12,
@@ -226,6 +220,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1331312130883228189, guid: 9a5d18047979b51cfab97c5cdfbce345,
     type: 3}
   m_PrefabInstance: {fileID: 1772185598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1386718219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181503106406578491, guid: 071535054d60315d09d3b9274d6a2de7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8096151428962632841}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1772185598
 PrefabInstance:
@@ -2693,7 +2693,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Board
       value: 
-      objectReference: {fileID: 1124961313}
+      objectReference: {fileID: 1386718219}
     - target: {fileID: 6196377848356184795, guid: 9a5d18047979b51cfab97c5cdfbce345,
         type: 3}
       propertyPath: m_LocalPosition.z

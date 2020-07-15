@@ -2863,12 +2863,12 @@ PrefabInstance:
     - target: {fileID: 725188245409585613, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 725188245409585613, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.55
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 1018994723515999039, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
@@ -2915,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 1718548767244125271, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.57
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 1718548767244125271, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
@@ -2975,17 +2975,42 @@ PrefabInstance:
     - target: {fileID: 2448250096461767154, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.249
+      value: -1.262
       objectReference: {fileID: 0}
     - target: {fileID: 2448250096461767154, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.641
+      value: 1.6532
       objectReference: {fileID: 0}
     - target: {fileID: 2448250096461767154, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.103
+      value: -0.1073
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633205163889888411, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_IsContraintActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633205163889888411, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].x
+      value: 0.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633205163889888411, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].y
+      value: 0.07499981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633205163889888411, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].z
+      value: 1.4450002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658988706501370170, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3959354916841375530, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
@@ -3003,6 +3028,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4755873544284414228, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6470175257512589064, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
       propertyPath: m_Mesh
@@ -3023,6 +3053,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627748312248095705, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627748312248095705, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627748312248095705, guid: e17b7903def8f7e9b80f69737fc33f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.075
       objectReference: {fileID: 0}
     - target: {fileID: 9115141169232601361, guid: e17b7903def8f7e9b80f69737fc33f7e,
         type: 3}
