@@ -36,11 +36,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        if (Debug.isDebugBuild)
-            LoadLevel(0);
-        else
+        // if (Debug.isDebugBuild)
+        //     LoadLevel(0);
+        // else
             LoadLevel(getMaxUnlockedLevel());
-
     }
 
     private void Update() {
@@ -54,8 +53,6 @@ public class LevelManager : MonoBehaviour {
             if(NbBallsAtEnd == currentLevel.nbBalls && !levelFinished){
                 levelFinished = true;
                 UnlockNextLevel();
-                uiInstance.HideInGame();
-                uiInstance.ShowFinished();
             }
 
             foreach (Ball ball in balls){
@@ -149,11 +146,16 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void UnlockNextLevel(){
-        if ((CurrentLevelIndex != SceneManager.sceneCountInBuildSettings) &&
-            (currentLevel.levelNumber <= levels.Count)) {
+        if ((CurrentLevelIndex != SceneManager.sceneCountInBuildSettings-1) &&
+            (currentLevel.levelNumber < levels.Count-1)) {
             
             levels[currentLevel.LevelIndex + 1].unlocked = true;
             SaveProgression();
+            uiInstance.HideInGame();
+            uiInstance.ShowFinished();
+        }
+        else {
+            uiInstance.EndUI();
         }
     }
 

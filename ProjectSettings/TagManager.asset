@@ -17,6 +17,7 @@ TagManager:
   - Levels panels
   - SkipConfirmationUI
   - HelpMessageUI
+  - EndMessageUI
   layers:
   - Default
   - TransparentFX

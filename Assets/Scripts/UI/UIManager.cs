@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     private List<GameObject> levelSelectorPanels;
     private GameObject[] skipObjects;
     private GameObject[] helpObjects;
+    private GameObject[] endObjects;
     private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
         skipObjects = GameObject.FindGameObjectsWithTag("SkipConfirmationUI"); //gets all objects with tag SkipConfirmationUI
         helpObjects = GameObject.FindGameObjectsWithTag("HelpMessageUI"); //gets all objects with tag SkipConfirmationUI
+        endObjects = GameObject.FindGameObjectsWithTag("EndMessageUI"); //gets all objects with tag SkipConfirmationUI
         settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
@@ -46,6 +48,7 @@ public class UIManager : MonoBehaviour
         HideGameOver();
         HideFinished();
         HideSkipLevel();
+        HideEndMessage();
         ShowInGame();
 
         if(!PlayerPrefs.HasKey("FirstLaunch")){
@@ -134,7 +137,22 @@ public class UIManager : MonoBehaviour
             HideHelpMessage();
 
             if(!PlayerPrefs.HasKey("FirstLaunch"))
-                PlayerPrefs.SetInt("FirstLaunch", 0);
+                PlayerPrefs.SetInt("FirstLaunch", 1);
+        }
+    }
+
+    public void EndUI()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            ShowEndMessage();
+        }
+        else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            HideEndMessage();
+            Reload();
         }
     }
 
@@ -248,6 +266,24 @@ public class UIManager : MonoBehaviour
     public void HideSkipLevel()
     {
         foreach (GameObject g in skipObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with EndMessageUI tag
+    public void ShowEndMessage()
+    {
+        foreach (GameObject g in endObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with EndMessageUI tag
+    public void HideEndMessage()
+    {
+        foreach (GameObject g in endObjects)
         {
             g.SetActive(false);
         }
