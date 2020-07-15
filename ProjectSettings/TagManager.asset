@@ -16,6 +16,7 @@ TagManager:
   - DynamicCamera
   - Levels panels
   - SkipConfirmationUI
+  - HelpMessageUI
   layers:
   - Default
   - TransparentFX

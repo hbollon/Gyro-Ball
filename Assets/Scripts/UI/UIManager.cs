@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     private GameObject[] levelSelectorObjects;
     private List<GameObject> levelSelectorPanels;
     private GameObject[] skipObjects;
+    private GameObject[] helpObjects;
     private GameObject[] settingsObjects;
     private GameObject[] inGameObjects;
     private GameObject[] gameOverObjects;
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
         pauseObjects = GameObject.FindGameObjectsWithTag("OnPauseUI");          //gets all objects with tag OnPauseUI
         levelSelectorObjects = GameObject.FindGameObjectsWithTag("LevelSelector"); //gets all objects with tag LevelSelector
         skipObjects = GameObject.FindGameObjectsWithTag("SkipConfirmationUI"); //gets all objects with tag SkipConfirmationUI
+        helpObjects = GameObject.FindGameObjectsWithTag("HelpMessageUI"); //gets all objects with tag SkipConfirmationUI
         settingsObjects = GameObject.FindGameObjectsWithTag("SettingsUI"); //gets all objects with tag SettingsUI
         finishObjects = GameObject.FindGameObjectsWithTag("OnFinishUI");        //gets all objects with tag OnFinishUI
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOverUI");      //gets all objects with tag OnGameOverUI
@@ -45,6 +47,10 @@ public class UIManager : MonoBehaviour
         HideFinished();
         HideSkipLevel();
         ShowInGame();
+
+        if(!PlayerPrefs.HasKey("FirstLaunch")){
+            HelpUI();
+        } else HideHelpMessage();
 
         if (GameObject.FindWithTag("Ball"))
             ballsController = GameObject.FindGameObjectsWithTag("Ball");
@@ -112,6 +118,23 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1;
             HideSkipLevel();
+        }
+    }
+
+    public void HelpUI()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            ShowHelpMessage();
+        }
+        else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            HideHelpMessage();
+
+            if(!PlayerPrefs.HasKey("FirstLaunch"))
+                PlayerPrefs.SetInt("FirstLaunch", 0);
         }
     }
 
@@ -189,6 +212,24 @@ public class UIManager : MonoBehaviour
     public void HideInGame()
     {
         foreach (GameObject g in inGameObjects)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    //shows objects with HelpMessageUI tag
+    public void ShowHelpMessage()
+    {
+        foreach (GameObject g in helpObjects)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    //hides objects with HelpMessageUI tag
+    public void HideHelpMessage()
+    {
+        foreach (GameObject g in helpObjects)
         {
             g.SetActive(false);
         }
