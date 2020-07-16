@@ -80,8 +80,10 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener {
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult) {
         if (showResult == ShowResult.Finished) {
-            if(placementId.Equals(rewardedPlacementId))
+            if(placementId.Equals(rewardedPlacementId)) {
+                LevelManager.Instance.UnlockNextLevel();
                 LevelManager.Instance.NextLevel();
+            }
             else if(placementId.Equals(videoPlacementId))
                 ConsecutivesLevels = 0;
             Debug.Log("The ad was watched completelly");
