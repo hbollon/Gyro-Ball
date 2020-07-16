@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3739450638439132913, guid: 91e2cad4612c4ce23801e82c6bf10122,
         type: 3}
       propertyPath: m_Name
-      value: Landscape Camera
+      value: Landscape Camera Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3739450638439132916, guid: 91e2cad4612c4ce23801e82c6bf10122,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 3739450638439132919, guid: 91e2cad4612c4ce23801e82c6bf10122,
         type: 3}
       propertyPath: field of view
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3739450638574172812, guid: 91e2cad4612c4ce23801e82c6bf10122,
         type: 3}

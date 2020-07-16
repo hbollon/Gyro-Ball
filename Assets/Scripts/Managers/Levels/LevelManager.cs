@@ -4,11 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance { get; private set; }
+    public int NbBallsAtEnd { get; set; }
+    private bool levelFinished;
+    private bool gameOver;
+    private List<Ball> balls;
+    private UIManager uiInstance;
+
+    [SerializeField] private bool unlockAll = false;
 
     [System.Serializable] public class Level {
         public int levelNumber;
         public int levelChapter;
         public SceneReference levelScene;
+        public int nbBalls;
         private int levelIndex;
         public bool unlocked;
 
@@ -28,12 +36,63 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        LoadLevel(0);
+        // if (Debug.isDebugBuild)
+        //     LoadLevel(0);
+        // else
+            LoadLevel(getMaxUnlockedLevel());
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.R))
-            ResetProgression();
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            if(Input.GetKeyDown(KeyCode.R))
+                ResetProgression();
+
+            if(Input.GetKeyDown(KeyCode.F))
+                NbBallsAtEnd = currentLevel.nbBalls;
+
+            if(NbBallsAtEnd == currentLevel.nbBalls && !levelFinished){
+                levelFinished = true;
+                UnlockNextLevel();
+            }
+
+            foreach (Ball ball in balls){
+                if(ball != null && (ball.GetComponent<Ball>().GetFalled() || Input.GetKeyDown(KeyCode.G)) && !gameOver){
+                    gameOver = true;
+                    uiInstance.HideInGame();
+                    uiInstance.ShowGameOver();
+                    ball.gameObject.SetActive(false);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {   
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            NbBallsAtEnd = 0;
+            levelFinished = false;
+            gameOver = false;
+            if(GameObject.Find("UIManager").GetComponent<UIManager>() != null)
+                uiInstance = GameObject.Find("UIManager").GetComponent<UIManager>();
+            if (GameObject.FindWithTag("Ball")){
+                GameObject[] ballsObjects = GameObject.FindGameObjectsWithTag("Ball");
+                balls = new List<Ball>();
+                foreach (GameObject ball in ballsObjects){
+                    balls.Add(ball.GetComponent<Ball>());
+                }
+            }
+        }
     }
 
     private void Awake() {
@@ -52,14 +111,25 @@ public class LevelManager : MonoBehaviour {
         int progression = LoadProgression();
         print("Levels unlocked : " + progression);
         for(int i = 0; i<levels.Count; i++) {
-            if(progression >= i)
+            if(progression >= i || unlockAll)
                 levels[i].unlocked = true;
             levels[i].LevelIndex = i;
         }
     }
 
+    private int getMaxUnlockedLevel() {
+        int index = 1;
+        do {
+            if(!levels[index].unlocked)
+                return index-1;
+        } while (++index < levels.Count);
+
+        return index-1;
+    }
+
     public void LoadLevel(int index) {
         if (index < levels.Count && index >= 0 && levels[index].unlocked) {
+            AdsManager.Instance.ConsecutivesLevels++;
             currentLevel = levels[index];
             SceneManager.LoadScene(currentLevel.LevelIndex);
             SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
@@ -68,6 +138,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void NextLevel() {
+        AdsManager.Instance.ConsecutivesLevels++;
         currentLevel = levels[currentLevel.LevelIndex + 1];
         SceneManager.LoadScene(currentLevel.levelScene.ScenePath);
         SoundManager.Instance.StartMusicWithTheme(currentLevel.levelChapter);
@@ -75,11 +146,16 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void UnlockNextLevel(){
-        if ((CurrentLevelIndex != SceneManager.sceneCountInBuildSettings) &&
-            (currentLevel.levelNumber <= levels.Count)) {
+        if ((CurrentLevelIndex != SceneManager.sceneCountInBuildSettings-1) &&
+            (currentLevel.levelNumber < levels.Count-1)) {
             
             levels[currentLevel.LevelIndex + 1].unlocked = true;
             SaveProgression();
+            uiInstance.HideInGame();
+            uiInstance.ShowFinished();
+        }
+        else {
+            uiInstance.EndUI();
         }
     }
 

@@ -96,7 +96,7 @@ public class Ball : MonoBehaviour {
         }
     }
 
-    private void GameOver(){
+    public void GameOver(){
         falled = true;
     }
 

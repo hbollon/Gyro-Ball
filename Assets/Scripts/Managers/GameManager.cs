@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.PostProcessing;
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
     }
 
     private void OnEnable()
@@ -50,23 +50,25 @@ public class GameManager : MonoBehaviour {
 
     private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        staticCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        dynamicCamera = GameObject.Find("DynamicCamera").GetComponent<Camera>();
-        landscapeCameraObj = GameObject.Find("Landscape Camera");
-        postProcessObj = GameObject.Find("PostProcessing");
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            staticCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+            dynamicCamera = GameObject.Find("DynamicCamera").GetComponent<Camera>();
+            landscapeCameraObj = GameObject.Find("Landscape Camera");
+            postProcessObj = GameObject.Find("PostProcessing");
 
-        if(PlayerPrefs.HasKey("PostProcess")){
-            if(PlayerPrefs.GetInt("PostProcess") == 0)
-                postProcessObj.SetActive(false);
-        }
-        if(PlayerPrefs.HasKey("Landscape")){
-            if(PlayerPrefs.GetInt("Landscape") == 0){
-                landscapeCameraObj.SetActive(false);
-                ChangeCameraClearFlag(0);
+            if(PlayerPrefs.HasKey("PostProcess")){
+                if(PlayerPrefs.GetInt("PostProcess") == 0)
+                    postProcessObj.SetActive(false);
             }
-        }
+            if(PlayerPrefs.HasKey("Landscape")){
+                if(PlayerPrefs.GetInt("Landscape") == 0){
+                    landscapeCameraObj.SetActive(false);
+                    ChangeCameraClearFlag(0);
+                }
+            }
 
-        ApplyCameraMode();
+            ApplyCameraMode();
+        }
     }
 
     private void InitSettings()

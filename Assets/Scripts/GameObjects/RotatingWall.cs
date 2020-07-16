@@ -4,7 +4,10 @@ using System.Collections;
 public class RotatingWall : MonoBehaviour {
     public float rotatingSpeed = 50f;
     public bool invertRotating = false;
+    public bool moveBallWithPlatform = false;
     public bool debug = false;
+
+    private Transform initialParent = null;
 
     private void Start() {
         StartCoroutine(Rotate());
@@ -17,7 +20,22 @@ public class RotatingWall : MonoBehaviour {
                 transform.Rotate(0, rotatingSpeed * Time.deltaTime, 0);
             else
                 transform.Rotate(0, -rotatingSpeed * Time.deltaTime, 0);
+
             yield return new WaitForFixedUpdate();
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(moveBallWithPlatform && other.gameObject.tag.Equals("Ball")){
+            if(initialParent == null)
+                initialParent = other.gameObject.transform.parent;
+            other.gameObject.transform.parent = gameObject.transform;
+        }
+    }
+
+    private void OnCollisionExit(Collision other) {
+        if(moveBallWithPlatform && other.gameObject.tag.Equals("Ball")){
+            other.gameObject.transform.parent = initialParent;
         }
     }
 
