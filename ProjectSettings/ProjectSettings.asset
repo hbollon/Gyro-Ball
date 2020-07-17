@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Bits Please
-  productName: Gyro'Ball 3D
+  productName: Gyro'Ball
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -169,7 +169,7 @@ PlayerSettings:
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -264,7 +264,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 48773ee47466cd0fbacb7bc7746d21d2, type: 3}
+      m_Icon: {fileID: 2800000, guid: f32cdbb94c154d50e83070efa5527218, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -308,7 +308,7 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 4a271b17e205d0c55a5e4c40af1d4ab7, type: 3}
+      - {fileID: 2800000, guid: 08493414e39786fc59ebd42539bec19f, type: 3}
       - {fileID: 2800000, guid: 878aa71895410c7b9822e04933a1879c, type: 3}
       m_Width: 432
       m_Height: 432
@@ -340,7 +340,7 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 48773ee47466cd0fbacb7bc7746d21d2, type: 3}
+      - {fileID: 2800000, guid: a20bebdea5ddeaa79ab813f33ab9d89b, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
