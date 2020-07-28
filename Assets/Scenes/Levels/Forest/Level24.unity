@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1360052974}
-  m_IndirectSpecularColor: {r: 0.07029637, g: 0.3553989, b: 0.9729035, a: 1}
+  m_IndirectSpecularColor: {r: 0.06945415, g: 0.3540228, b: 0.9676555, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -57,14 +57,14 @@ LightmapSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 20
-    m_AtlasSize: 64
+    m_AtlasSize: 128
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
     m_ExtractAmbientOcclusion: 0
     m_Padding: 2
-    m_LightmapParameters: {fileID: 15201, guid: 0000000000000000f000000000000000,
+    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000,
       type: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 1
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -100,7 +100,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: ce8e0804b9be85d30a5b74821fa33f38,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1779956523, guid: 91e2cad4612c4ce23801e82c6bf10122, type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779956523, guid: 91e2cad4612c4ce23801e82c6bf10122, type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 4006906131123939526}
+    - target: {fileID: 1779956523, guid: 91e2cad4612c4ce23801e82c6bf10122, type: 3}
+      propertyPath: m_Cameras.Array.data[1]
+      value: 
+      objectReference: {fileID: 865423642}
     - target: {fileID: 3739450638439132913, guid: 91e2cad4612c4ce23801e82c6bf10122,
         type: 3}
       propertyPath: m_Name
@@ -2846,6 +2858,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5d18047979b51cfab97c5cdfbce345, type: 3}
+--- !u!20 &865423642 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1931057136168731385, guid: 9a5d18047979b51cfab97c5cdfbce345,
+    type: 3}
+  m_PrefabInstance: {fileID: 865423641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1360052973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,3 +3160,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf4df4f77322999c4a3d22995ead48ba, type: 3}
+--- !u!1 &4006906131123939525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 826418775086040564, guid: cf4df4f77322999c4a3d22995ead48ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 4006906131123939524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &4006906131123939526 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6517266561853628774, guid: cf4df4f77322999c4a3d22995ead48ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 4006906131123939524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4006906131123939527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006906131123939525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
