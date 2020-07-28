@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: dc6f29a1362f6d3d68adcfa67e7c16ea
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cattail
+    second: {fileID: 2100000, guid: e7e629a854706bcf2835fc912e2675f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oak_Leaves
+    second: {fileID: 2100000, guid: 2c5bda8b5cf88730698e2fdf9dbcc07c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -43,6 +53,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1

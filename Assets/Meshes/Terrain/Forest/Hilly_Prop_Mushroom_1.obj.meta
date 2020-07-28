@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: 1d2478f9666fa9c838330f46ec61effd
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_Red_Mushroom
+    second: {fileID: 2100000, guid: f52fa6224c60c092eb7c2a180ba58a19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mushroom_White
+    second: {fileID: 2100000, guid: 02439a4f45c4cdaa3b26e4658e619f81, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -43,6 +53,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
