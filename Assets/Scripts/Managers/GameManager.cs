@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
-        Application.targetFrameRate = 30;
+
     }
 
     private void OnEnable()
@@ -87,19 +87,16 @@ public class GameManager : MonoBehaviour {
         {
             case 0:
                 EnablePostProcessing(false);
-                EnableLandscape(false);
                 break;
 
             case 1:
-                EnablePostProcessing(false);
-                EnableLandscape(true);
+                EnablePostProcessing(true);
                 break;
             case 2:
             case 3:
             case 4:
             case 5:
                 EnablePostProcessing(true);
-                EnableLandscape(true);
                 break;
 
             default:
