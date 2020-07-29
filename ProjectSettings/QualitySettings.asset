@@ -226,7 +226,7 @@ QualitySettings:
     excludedTargetPlatforms:
     - Android
   m_PerPlatformDefaultQuality:
-    Android: 2
+    Android: 3
     Lumin: 5
     Nintendo Switch: 5
     PS4: 5
