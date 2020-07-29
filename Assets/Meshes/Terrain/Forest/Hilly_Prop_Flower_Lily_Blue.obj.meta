@@ -1,9 +1,24 @@
 fileFormatVersion: 2
 guid: 602ec7111b5814a47aa23e801ee7236a
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lily_Blue
+    second: {fileID: 2100000, guid: 29895c34fa129528aa23bb7366942b85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pine_Leaves
+    second: {fileID: 2100000, guid: ba1c2e3ac96a2e86eb6b073971a6a54e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pollen
+    second: {fileID: 2100000, guid: f5b6b59a5694fc25494189cc49203b40, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -43,6 +58,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
