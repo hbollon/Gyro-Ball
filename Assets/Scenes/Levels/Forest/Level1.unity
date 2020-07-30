@@ -3165,16 +3165,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.13
       objectReference: {fileID: 0}
-    - target: {fileID: 7720314848561121734, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: waitGyroInitialization
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7720314848561121734, guid: 071535054d60315d09d3b9274d6a2de7,
-        type: 3}
-      propertyPath: waitGyroInitializationDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8096151429007428130, guid: 071535054d60315d09d3b9274d6a2de7,
         type: 3}
       propertyPath: m_LocalScale.x
