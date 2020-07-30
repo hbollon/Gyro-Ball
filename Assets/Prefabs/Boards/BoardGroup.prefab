@@ -201,6 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothing: 0.2
   speed: 20
+  waitGyroInitialization: 1
+  waitGyroInitializationDuration: 0.2
   debug: 0
 --- !u!1 &1872847301167427429
 GameObject:
