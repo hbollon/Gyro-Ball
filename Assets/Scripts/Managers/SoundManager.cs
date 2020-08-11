@@ -92,6 +92,7 @@ public class SoundManager : MonoBehaviour {
             {
                 case 0:
                 case 1:
+                case 2:
                     PlayMusic(WoodMusic);
                     PlayAmbient(WoodAmbient);
                     break;
